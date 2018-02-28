@@ -53,7 +53,9 @@ const appRoutes = [
     component: Icons
   },
  
-  { redirect: true, path: "/", to: "/dashboard", navbarName: "Redirect" }
+
+
+{ redirect: true, path: "/", to: "/dashboard", navbarName: "Redirect" }
 ];
 
 export default appRoutes;
