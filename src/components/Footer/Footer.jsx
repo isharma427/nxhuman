@@ -12,34 +12,28 @@ function Footer({ ...props }) {
         <div className={classes.left}>
           <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
-              <a href="#home" className={classes.block}>
-                Home
+              <a href="Case Overview" className={classes.block}>
+                Case Overview
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
-              <a href="#company" className={classes.block}>
-                Company
+              <a href="Patient Chart" className={classes.block}>
+                Patient Chart
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
-              <a href="#portfolio" className={classes.block}>
-                Portfolio
+              <a href="Dialogue" className={classes.block}>
+                Dialogue
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
-              <a href="#blog" className={classes.block}>
-                Blog
+              <a href="Summary" className={classes.block}>
+                Summary
               </a>
             </ListItem>
           </List>
         </div>
         <p className={classes.right}>
-          <span>
-            &copy; {1900 + new Date().getYear()}{" "}
-            <a href="http://www.creative-tim.com" className={classes.a}>
-              Creative Tim
-            </a>, made with love for a better web
-          </span>
         </p>
       </div>
     </footer>

@@ -50,28 +50,6 @@ class Dashboard extends React.Component {
         <Grid container>
           <ItemGrid xs={12} sm={6} md={3}>
             <StatsCard
-              icon={ContentCopy}
-              iconColor="orange"
-              title="Used Space"
-              description="49/50"
-              small="GB"
-              statIcon={Warning}
-              statIconColor="danger"
-              statLink={{ text: "Get More Space...", href: "#pablo" }}
-            />
-          </ItemGrid>
-          <ItemGrid xs={12} sm={6} md={3}>
-            <StatsCard
-              icon={Store}
-              iconColor="green"
-              title="Revenue"
-              description="$34,245"
-              statIcon={DateRange}
-              statText="Last 24 Hours"
-            />
-          </ItemGrid>
-          <ItemGrid xs={12} sm={6} md={3}>
-            <StatsCard
               icon={InfoOutline}
               iconColor="red"
               title="Fixed Issues"

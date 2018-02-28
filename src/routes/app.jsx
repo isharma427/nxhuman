@@ -1,5 +1,5 @@
 import DashboardPage from "views/Dashboard/Dashboard.jsx";
-import UserProfile from "views/UserProfile/UserProfile.jsx";
+import UserProfile from "views/CaseOverview/CaseOverview.jsx";
 import TableList from "views/TableList/TableList.jsx";
 import Typography from "views/Typography/Typography.jsx";
 import Icons from "views/Icons/Icons.jsx";
@@ -18,54 +18,41 @@ import {
 
 const appRoutes = [
   {
-    path: "/dashboard",
-    sidebarName: "Dashboard",
-    navbarName: "Material Dashboard",
+    path: "/dashboard", 
+    sidebarName: "Welcome",
+    navbarName: "Welcome",
     icon: Dashboard,
     component: DashboardPage
   },
   {
     path: "/user",
-    sidebarName: "User Profile",
-    navbarName: "Profile",
+    sidebarName: "Case Overview",
+    navbarName: "Case Overview",
     icon: Person,
     component: UserProfile
   },
   {
     path: "/table",
-    sidebarName: "Table List",
-    navbarName: "Table List",
+    sidebarName: "Patient Chart",
+    navbarName: "Patient Chart",
     icon: ContentPaste,
     component: TableList
   },
   {
     path: "/typography",
-    sidebarName: "Typography",
-    navbarName: "Typography",
+    sidebarName: "Dialogue",
+    navbarName: "Dialogue",
     icon: LibraryBooks,
     component: Typography
   },
   {
     path: "/icons",
-    sidebarName: "Icons",
-    navbarName: "Icons",
+    sidebarName: "Summary",
+    navbarName: "Summary",
     icon: BubbleChart,
     component: Icons
   },
-  {
-    path: "/maps",
-    sidebarName: "Maps",
-    navbarName: "Map",
-    icon: LocationOn,
-    component: Maps
-  },
-  {
-    path: "/notifications",
-    sidebarName: "Notifications",
-    navbarName: "Notifications",
-    icon: Notifications,
-    component: NotificationsPage
-  },
+ 
   { redirect: true, path: "/", to: "/dashboard", navbarName: "Redirect" }
 ];
 
