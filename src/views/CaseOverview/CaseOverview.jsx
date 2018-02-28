@@ -11,21 +11,23 @@ import {
 
 import avatar from "assets/img/faces/marc.jpg";
 
+
+
 function UserProfile({ ...props }) {
   return (
     <div>
       <Grid container>
         <ItemGrid xs={12} sm={12} md={8}>
           <RegularCard
-            cardTitle="Edit Profile"
-            cardSubtitle="Complete your profile"
+            cardTitle="Overall Patient Information"
+            cardSubtitle="Please Fill Out!"
             content={
               <div>
                 <Grid container>
                   <ItemGrid xs={12} sm={12} md={5}>
                     <CustomInput
-                      labelText="Company (disabled)"
-                      id="company-disabled"
+                      labelText="Patient Condition"
+                      id="patient-condition"
                       formControlProps={{
                         fullWidth: true
                       }}
@@ -36,8 +38,8 @@ function UserProfile({ ...props }) {
                   </ItemGrid>
                   <ItemGrid xs={12} sm={12} md={3}>
                     <CustomInput
-                      // labelText="Username"
-                      id="username"
+                       labelText="Age of Patient"
+                      id="age-of-patient"
                       formControlProps={{
                         fullWidth: true
                       }}
@@ -45,8 +47,8 @@ function UserProfile({ ...props }) {
                   </ItemGrid>
                   <ItemGrid xs={12} sm={12} md={4}>
                     <CustomInput
-                      labelText="Email address"
-                      id="email-address"
+                      labelText="Height of Patient"
+                      id="height"
                       formControlProps={{
                         fullWidth: true
                       }}
@@ -76,8 +78,8 @@ function UserProfile({ ...props }) {
                 <Grid container>
                   <ItemGrid xs={12} sm={12} md={4}>
                     <CustomInput
-                      labelText="City"
-                      id="city"
+                      labelText="Race"
+                      id="race"
                       formControlProps={{
                         fullWidth: true
                       }}
@@ -85,30 +87,24 @@ function UserProfile({ ...props }) {
                   </ItemGrid>
                   <ItemGrid xs={12} sm={12} md={4}>
                     <CustomInput
-                      labelText="Country"
-                      id="country"
+                      labelText="Location of Case"
+                      id="case-location"
                       formControlProps={{
                         fullWidth: true
                       }}
                     />
                   </ItemGrid>
                   <ItemGrid xs={12} sm={12} md={4}>
-                    <CustomInput
-                      labelText="Postal Code"
-                      id="postal-code"
-                      formControlProps={{
-                        fullWidth: true
-                      }}
-                    />
+                    
                   </ItemGrid>
                 </Grid>
                 <Grid container>
                   <ItemGrid xs={12} sm={12} md={12}>
                     <InputLabel style={{ color: "#AAAAAA" }}>
-                      About me
+                      
                     </InputLabel>
                     <CustomInput
-                      labelText="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo."
+                      labelText="Overall Case Description"
                       id="about-me"
                       formControlProps={{
                         fullWidth: true
@@ -122,21 +118,11 @@ function UserProfile({ ...props }) {
                 </Grid>
               </div>
             }
-            footer={<Button color="primary">Update Profile</Button>}
+            footer={<Button color="primary">Next Step</Button>}
           />
         </ItemGrid>
         <ItemGrid xs={12} sm={12} md={4}>
-          <ProfileCard
-            avatar={avatar}
-            subtitle="CEO / CO-FOUNDER"
-            title="Alec Thompson"
-            description="Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is..."
-            footer={
-              <Button color="primary" round>
-                Follow
-              </Button>
-            }
-          />
+          
         </ItemGrid>
       </Grid>
     </div>
