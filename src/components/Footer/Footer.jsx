@@ -12,22 +12,22 @@ function Footer({ ...props }) {
         <div className={classes.left}>
           <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
-              <a href="Case Overview" className={classes.block}>
+              <a href="user" className={classes.block}>
                 Case Overview
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
-              <a href="Patient Chart" className={classes.block}>
+              <a href="table" className={classes.block}>
                 Patient Chart
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
-              <a href="Dialogue" className={classes.block}>
+              <a href="typography" className={classes.block}>
                 Dialogue
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
-              <a href="Summary" className={classes.block}>
+              <a href="icons" className={classes.block}>
                 Summary
               </a>
             </ListItem>
