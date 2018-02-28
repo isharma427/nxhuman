@@ -47,16 +47,14 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div>
-        <Grid container>
-          
+        <Grid container> 
+            <RegularCard
+              cardTitle="Welcome to nXHuman Case Authoring Tool"
+              cardSubtitle="nXHuman Case Authoring Tool allows instructors to design cases for their students to assess patient interaction. Click Case Overview below to get started"
+            />
         </Grid>
-        <Grid container>
-          
-        </Grid>
-        <Grid container>
-         
-         
-        </Grid>
+       
+        
       </div>
     );
   }
