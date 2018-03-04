@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 // react plugin for creating charts
 import ChartistGraph from "react-chartist";
 import {
@@ -22,7 +23,9 @@ import {
   TasksCard,
   RegularCard,
   Table,
-  ItemGrid
+  ItemGrid,
+  CustomInput,
+  Button
 } from "components";
 
 import {
@@ -52,7 +55,27 @@ class Dashboard extends React.Component {
               cardTitle="Welcome to nXHuman Case Authoring Tool"
               cardSubtitle="nXHuman Case Authoring Tool allows instructors to design cases for their students to assess patient interaction. Click Case Overview below to get started"
             />
-        </Grid>
+            <RegularCard
+            cardTitle="CaseID"
+            cardSubtitle="Create a Name for your Case"
+            content={
+              <ItemGrid xs={12} sm={12} md={5}>
+                      <CustomInput
+                        labelText="Case Name"
+                        id="case-id"
+                        formControlProps={{
+                          fullWidth: true
+                        }}
+                        inputProps={{
+                          disabled: false
+                        }}
+                      />
+                    </ItemGrid>   
+             } 
+             />
+          </Grid>
+
+                      
        
         
       </div>
