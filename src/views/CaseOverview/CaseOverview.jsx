@@ -32,7 +32,7 @@ function UserProfile({ ...props }) {
                         fullWidth: true
                       }}
                       inputProps={{
-                        disabled: true
+                        disabled: false
                       }}
                     />
                   </ItemGrid>
