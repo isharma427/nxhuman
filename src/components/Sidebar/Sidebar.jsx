@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 import cx from "classnames";
+import CircularProgressbar from 'react-circular-progressbar'; 
+import 'react-circular-progressbar/dist/styles.css';
 import {
   withStyles,
   Drawer,
@@ -23,6 +25,7 @@ const Sidebar = ({ ...props }) => {
   }
   const { classes, color, logo, image, logoText, routes } = props;
   var links = (
+    
     <List className={classes.list}>
       {routes.map((prop, key) => {
         if (prop.redirect) return null;
@@ -49,6 +52,8 @@ const Sidebar = ({ ...props }) => {
                 disableTypography={true}
               />
             </ListItem>
+  
+
           </NavLink>
         );
       })}
@@ -65,6 +70,7 @@ const Sidebar = ({ ...props }) => {
     </div>
   );
   return (
+    
     <div>
       <Hidden mdUp>
         <Drawer
@@ -77,7 +83,9 @@ const Sidebar = ({ ...props }) => {
           onClose={props.handleDrawerToggle}
           ModalProps={{
             keepMounted: true // Better open performance on mobile.
+
           }}
+          
         >
           {brand}
           <div className={classes.sidebarWrapper}>
@@ -90,6 +98,7 @@ const Sidebar = ({ ...props }) => {
               style={{ backgroundImage: "url(" + image + ")" }}
             />
           ) : null}
+          
         </Drawer>
       </Hidden>
       <Hidden smDown>
@@ -109,8 +118,10 @@ const Sidebar = ({ ...props }) => {
               style={{ backgroundImage: "url(" + image + ")" }}
             />
           ) : null}
+          
         </Drawer>
       </Hidden>
+     
     </div>
   );
 };
@@ -118,5 +129,6 @@ const Sidebar = ({ ...props }) => {
 Sidebar.propTypes = {
   classes: PropTypes.object.isRequired
 };
+
 
 export default withStyles(sidebarStyle)(Sidebar);
