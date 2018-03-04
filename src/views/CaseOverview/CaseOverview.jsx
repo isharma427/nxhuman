@@ -125,6 +125,7 @@ function UserProfile({ ...props }) {
           
         </ItemGrid>
       </Grid>
+      
     </div>
   );
 }

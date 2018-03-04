@@ -28,6 +28,7 @@ function Icons({ ...props }) {
         />
       </ItemGrid>
     </Grid>
+    
   );
 }
 

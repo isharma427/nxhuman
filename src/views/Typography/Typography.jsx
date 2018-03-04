@@ -11,7 +11,8 @@ import {
   Warning,
   Danger,
   Small,
-  RegularCard
+  RegularCard,
+  Button
 } from "components";
 
 const style = {
@@ -41,7 +42,9 @@ function TypographyPage({ ...props }) {
       cardSubtitle={"Scroll right to see more"}
       
     />
+  
   );
+  
 }
 
 export default withStyles(style)(TypographyPage);
