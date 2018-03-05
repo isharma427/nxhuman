@@ -1,6 +1,7 @@
 import React from "react";
 import { withStyles } from "material-ui";
-import CircularProgressbar from 'react-circular-progressbar'; 
+import { Progress } from 'react-sweet-progress';
+import "react-sweet-progress/lib/style.css";
 import {
   P,
   Quote,
@@ -39,12 +40,12 @@ const style = {
 };
 function TypographyPage({ ...props }) {
   return (
-    <div>
-
-
-      <ItemGrid xs={5} sm={5} md={3}>
-           <CircularProgressbar percentage={60} />
-      </ItemGrid>
+     <div>
+      <Progress
+          percent={75}
+          status="active"
+      
+        />
 
       <RegularCard
         cardTitle={"Student Dialogue"}
@@ -666,7 +667,8 @@ function TypographyPage({ ...props }) {
 
   </div>
 </div>
-  	</div>
+
+    </div>
   );
   
 }
