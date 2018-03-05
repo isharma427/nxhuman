@@ -27,6 +27,9 @@ const Sidebar = ({ ...props }) => {
   var links = (
     
     <List className={classes.list}>
+      
+
+      
       {routes.map((prop, key) => {
         if (prop.redirect) return null;
         const listItemClasses = cx({
@@ -34,6 +37,7 @@ const Sidebar = ({ ...props }) => {
         });
         const whiteFontClasses = cx({
           [" " + classes.whiteFont]: activeRoute(prop.path)
+          
         });
         return (
           <NavLink
@@ -51,21 +55,24 @@ const Sidebar = ({ ...props }) => {
                 className={classes.itemText + whiteFontClasses}
                 disableTypography={true}
               />
+              
             </ListItem>
-  
+          
 
           </NavLink>
+          
         );
       })}
     </List>
   );
   var brand = (
     <div className={classes.logo}>
-      <a href="https://www.creative-tim.com" className={classes.logoLink}>
+      <a href="https://nxhuman.herokuapp.com/dashboard" className={classes.logoLink}>
         <div className={classes.logoImage}>
           <img src={logo} alt="logo" className={classes.img} />
         </div>
         {logoText}
+        
       </a>
     </div>
   );

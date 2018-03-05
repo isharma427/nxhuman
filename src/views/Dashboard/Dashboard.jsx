@@ -35,6 +35,7 @@ import {
 } from "variables/charts";
 
 import dashboardStyle from "variables/styles/dashboardStyle";
+import CircularProgressbar from 'react-circular-progressbar'; 
 
 class Dashboard extends React.Component {
   state = {
@@ -50,6 +51,9 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div>
+        <ItemGrid xs={5} sm={5} md={3}>
+           <CircularProgressbar percentage={0} />
+        </ItemGrid>
         <Grid container> 
             <RegularCard
               cardTitle="Welcome to nXHuman Case Authoring Tool"

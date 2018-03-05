@@ -1,6 +1,6 @@
 import React from "react";
 import { withStyles } from "material-ui";
-
+import CircularProgressbar from 'react-circular-progressbar'; 
 import {
   P,
   Quote,
@@ -12,7 +12,8 @@ import {
   Danger,
   Small,
   RegularCard,
-  Button
+  Button,
+  ItemGrid
 } from "components";
 
 const style = {
@@ -37,12 +38,17 @@ const style = {
 };
 function TypographyPage({ ...props }) {
   return (
-    <RegularCard
-      cardTitle={"Enter Patient - Student Dialogue"}
-      cardSubtitle={"Scroll right to see more"}
+    <div>
+      <ItemGrid xs={5} sm={5} md={3}>
+           <CircularProgressbar percentage={60} />
+      </ItemGrid>
+
+      <RegularCard
+        cardTitle={"Enter Patient - Student Dialogue"}
+        cardSubtitle={"Scroll right to see more"}
       
-    />
-  
+      />
+  </div>
   );
   
 }

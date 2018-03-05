@@ -10,12 +10,16 @@ import {
 } from "components";
 
 import avatar from "assets/img/faces/marc.jpg";
+import CircularProgressbar from 'react-circular-progressbar'; 
 
 
 
 function UserProfile({ ...props }) {
   return (
     <div>
+      <ItemGrid xs={5} sm={5} md={3}>
+           <CircularProgressbar percentage={20} />
+        </ItemGrid>
       <Grid container>
         <ItemGrid xs={12} sm={12} md={8}>
           <RegularCard
