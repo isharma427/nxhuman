@@ -17,7 +17,6 @@ import {
 } from "components";
 import PropTypes from "prop-types";
 import tableStyle from "variables/styles/tableStyle";
-import DatePicker from 'react-date-picker';
 
 function PatientChart() {
   return (
