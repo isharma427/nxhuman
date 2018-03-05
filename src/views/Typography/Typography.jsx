@@ -677,6 +677,15 @@ function TypographyPage({ ...props }) {
            <CircularProgressbar percentage={60} />
       </ItemGrid>
       
+      <ItemGrid>
+      footer={<Button 
+            color="primary">Next Step
+            <a href="/src/views/TableList" >
+            </a>
+            </Button>}
+          />
+        </ItemGrid>
+      
     </div>
   );
   
