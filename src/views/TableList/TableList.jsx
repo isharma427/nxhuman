@@ -1,11 +1,19 @@
 import React from "react";
 import { Grid } from "material-ui";
-
+import { Progress } from 'react-sweet-progress';
+import "react-sweet-progress/lib/style.css";
 import { RegularCard, Table, ItemGrid, Button } from "components";
 <div id="root"></div>
 function TableList({ ...props }) {
   return (
+  
+    
     <Grid container>
+       <Progress
+          percent={50}
+          status="success"
+      
+        />
      
       <ItemGrid xs={12} sm={12} md={12}>
         <RegularCard
@@ -40,6 +48,7 @@ function TableList({ ...props }) {
         {<Button color="primary">Next Step</Button>}
       </ItemGrid>
     </Grid>
+    
   );
 
 }

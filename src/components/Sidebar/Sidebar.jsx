@@ -4,6 +4,8 @@ import { NavLink } from "react-router-dom";
 import cx from "classnames";
 import CircularProgressbar from 'react-circular-progressbar'; 
 import 'react-circular-progressbar/dist/styles.css';
+import { Progress } from 'react-sweet-progress';
+import "react-sweet-progress/lib/style.css";
 import {
   withStyles,
   Drawer,
@@ -36,6 +38,7 @@ const Sidebar = ({ ...props }) => {
           [" " + classes.whiteFont]: activeRoute(prop.path)
         });
         return (
+             
           <NavLink
             to={prop.path}
             className={classes.item}
@@ -52,12 +55,13 @@ const Sidebar = ({ ...props }) => {
                 disableTypography={true}
               />
             </ListItem>
-  
+            
 
           </NavLink>
         );
       })}
     </List>
+    
   );
   var brand = (
     <div className={classes.logo}>

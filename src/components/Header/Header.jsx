@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Menu } from "material-ui-icons";
+import { Progress } from 'react-sweet-progress';
+import "react-sweet-progress/lib/style.css";
 import {
   withStyles,
   AppBar,
@@ -31,10 +33,13 @@ function Header({ ...props }) {
     [" " + classes[color]]: color
   });
   return (
+    
     <AppBar className={classes.appBar + appBarClasses}>
+      
       <Toolbar className={classes.container}>
         <div className={classes.flex}>
           {/* Here we create navbar brand, based on route name */}
+         
           <Button href="#" className={classes.title}>
             {makeBrand()}
           </Button>
@@ -52,6 +57,7 @@ function Header({ ...props }) {
             <Menu />
           </IconButton>
         </Hidden>
+        
       </Toolbar>
     </AppBar>
   );

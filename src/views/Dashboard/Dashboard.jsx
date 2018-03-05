@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import { Progress } from 'react-sweet-progress';
+import "react-sweet-progress/lib/style.css";
 // react plugin for creating charts
 import ChartistGraph from "react-chartist";
 import {
@@ -50,6 +51,11 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div>
+        <Progress
+          percent={0}
+          status="success"
+      
+        />
         <Grid container> 
             <RegularCard
               cardTitle="Welcome to nXHuman Case Authoring Tool"

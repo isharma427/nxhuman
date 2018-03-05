@@ -1,6 +1,7 @@
 import React from "react";
 import { Grid, InputLabel } from "material-ui";
-
+import { Progress } from 'react-sweet-progress';
+import "react-sweet-progress/lib/style.css";
 import {
   ProfileCard,
   RegularCard,
@@ -15,7 +16,13 @@ import avatar from "assets/img/faces/marc.jpg";
 
 function UserProfile({ ...props }) {
   return (
+     
     <div>
+      <Progress
+          percent={25}
+          status="success"
+      
+        />
       <Grid container>
         <ItemGrid xs={12} sm={12} md={8}>
           <RegularCard
@@ -118,7 +125,11 @@ function UserProfile({ ...props }) {
                 </Grid>
               </div>
             }
-            footer={<Button color="primary">Next Step</Button>}
+            footer={<Button 
+            color="primary">Next Step
+            <a href="/src/views/TableList" >
+            </a>
+            </Button>}
           />
         </ItemGrid>
         <ItemGrid xs={12} sm={12} md={4}>
@@ -127,6 +138,7 @@ function UserProfile({ ...props }) {
       </Grid>
       
     </div>
+  
   );
 }
 

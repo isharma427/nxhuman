@@ -1,6 +1,7 @@
 import React from "react";
 import { withStyles } from "material-ui";
-
+import { Progress } from 'react-sweet-progress';
+import "react-sweet-progress/lib/style.css";
 import {
   P,
   Quote,
@@ -16,6 +17,7 @@ import {
 } from "components";
 
 const style = {
+  
   typo: {
     paddingLeft: "25%",
     marginBottom: "40px",
@@ -37,13 +39,21 @@ const style = {
 };
 function TypographyPage({ ...props }) {
   return (
+    <div>
+      <Progress
+          percent={75}
+          status="success"
+      
+        />
     <RegularCard
+       
       cardTitle={"Enter Patient - Student Dialogue"}
       cardSubtitle={"Scroll right to see more"}
       
     />
-  
+  </div>
   );
+ 
   
 }
 

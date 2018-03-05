@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { List, ListItem, withStyles } from "material-ui";
-import CircularProgressbar from 'react-circular-progressbar';
-import 'react-circular-progressbar/dist/styles.css';
+import { Progress } from 'react-sweet-progress';
+import "react-sweet-progress/lib/style.css";
 
 import footerStyle from "variables/styles/footerStyle";
 
@@ -10,21 +10,12 @@ function Footer({ ...props }) {
   const { classes } = props;
   return (
     <footer className={classes.footer}>
+      
       <div className={classes.container}>
-        <div className={classes.left}>
-        <CircularProgressbar    
-          percentage={0}
-          if className = {classes.footer.dashboard}
-            percentage = {10}
-          styles={{
-          path: { stroke: `rgba(62, 152, 199, ${0 / 100})` },
-                 
-          }
-          }
           
-
-   />
-        
+        <div className={classes.left}>
+          
+       
           
           <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
@@ -54,9 +45,11 @@ function Footer({ ...props }) {
         <p className={classes.right}>
         </p>
       </div>
+      
     </footer>
-  );
+  )
 }
+
 
 
 Footer.propTypes = {
