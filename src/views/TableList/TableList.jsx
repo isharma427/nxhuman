@@ -11,7 +11,7 @@ function TableList({ ...props }) {
     <Grid container>
        <Progress
           percent={50}
-          status="success"
+          status="active"
       
         />
      

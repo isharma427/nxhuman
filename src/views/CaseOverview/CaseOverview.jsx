@@ -20,7 +20,7 @@ function UserProfile({ ...props }) {
     <div>
       <Progress
           percent={25}
-          status="success"
+          status="active"
       
         />
       <Grid container>

@@ -42,7 +42,7 @@ function TypographyPage({ ...props }) {
     <div>
       <Progress
           percent={75}
-          status="success"
+          status="active"
       
         />
     <RegularCard

@@ -53,7 +53,7 @@ class Dashboard extends React.Component {
       <div>
         <Progress
           percent={0}
-          status="success"
+          status="active"
       
         />
         <Grid container> 

@@ -13,7 +13,8 @@ function Icons({ ...props }) {
     <Grid container>
       <Progress
           percent={100}
-          status="success"
+          status= "success"
+          status = "active"
       
         />
       <ItemGrid xs={12} sm={12} md={12}>
