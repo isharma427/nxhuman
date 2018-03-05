@@ -17,10 +17,13 @@ import {
 } from "components";
 import PropTypes from "prop-types";
 import tableStyle from "variables/styles/tableStyle";
-
+import CircularProgressbar from 'react-circular-progressbar'; 
 function PatientChart() {
   return (
     <div>
+      <ItemGrid xs={5} sm={5} md={3}>
+           <CircularProgressbar percentage={40} />
+        </ItemGrid>
       <Grid container>
         <ItemGrid xs={12} sm={12} md={10}>
           <RegularCard
