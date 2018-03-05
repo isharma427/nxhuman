@@ -2,6 +2,7 @@ import React from "react";
 import { withStyles } from "material-ui";
 import { Progress } from 'react-sweet-progress';
 import "react-sweet-progress/lib/style.css";
+import CircularProgressbar from 'react-circular-progressbar'; 
 import {
   P,
   Quote,
@@ -668,6 +669,14 @@ function TypographyPage({ ...props }) {
   </div>
 </div>
 
+ <ItemGrid xs={5} sm={5} md={3}>
+           <CircularProgressbar percentage={60} />
+      </ItemGrid>
+
+       <ItemGrid xs={5} sm={5} md={3}>
+           <CircularProgressbar percentage={60} />
+      </ItemGrid>
+      
     </div>
   );
   
