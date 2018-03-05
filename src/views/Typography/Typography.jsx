@@ -680,7 +680,7 @@ function TypographyPage({ ...props }) {
       <ItemGrid>
       footer={<Button 
             color="primary">Next Step
-            <a href="/src/views/TableList" >
+            <a href="/src/views/Icons" >
             </a>
             </Button>}
           />
