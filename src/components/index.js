@@ -57,7 +57,7 @@ import SnackbarContent from "./Snackbar/SnackbarContent.jsx";
 // // // Table
 // #############################
 
-import Table from "./Table/Table.jsx";
+import Table from "./PatientChart/patientchart.jsx";
 
 // ##############################
 // // // Tasks

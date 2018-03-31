@@ -17,7 +17,7 @@ import {
   Button,
   ItemGrid
 } from "components";
-import "./typography.css"
+import "./dialogue.css"
 
 const style = {
   typo: {
