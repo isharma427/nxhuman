@@ -5,6 +5,7 @@ import Typography from "views/Dialogue/dialogue.jsx";
 import Icons from "views/CaseReview/casereview.jsx";
 import Maps from "views/Maps/Maps.jsx";
 import NotificationsPage from "views/Notifications/Notifications.jsx";
+import Login from "views/Login/login.jsx";
 
 import {
   Dashboard,
@@ -13,10 +14,18 @@ import {
   LibraryBooks,
   BubbleChart,
   LocationOn,
-  Notifications
+  Notifications,
+  
 } from "material-ui-icons";
 
 const appRoutes = [
+  {
+    path: "/login", 
+    sidebarName: "Login",
+    navbarName: "Login",
+    icon: Dashboard,
+    component: Login
+  },
   {
     path: "/dashboard", 
     sidebarName: "Welcome",
