@@ -111,7 +111,7 @@ class Dashboard extends React.Component {
 }
  function addCase(event) {
   
-  axios.post('/api/dashboard', {
+  axios.post('/', {
     content: event
   }).then(function (response) {
     console.log(response);
