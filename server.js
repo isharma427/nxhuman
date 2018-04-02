@@ -65,8 +65,8 @@ var server_host = process.env.YOUR_HOST || '0.0.0.0';
 server.listen(server_port, server_host, function() {
     console.log('Listening on port %d', server_port);
 }); */
-var port = process.env.PORT;
-app.listen(port, "0.0.0.0", function() {
+var port = process.env.PORT || 3002;
+app.listen(port, function() {
 console.log("Listening on Port 3002");
 });
 
