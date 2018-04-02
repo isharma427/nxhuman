@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+node-modules
+node_modules
+=======
+>>>>>>> feff226107625aa3f418f26ed3c56a34dee7aebd
 node_modules
 node_modules
 package-lock.json
