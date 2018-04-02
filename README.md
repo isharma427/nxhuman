@@ -1,4 +1,5 @@
 
+Update
 
 ## Terminal Commands
 
@@ -9,5 +10,7 @@
 5. Then: ```npm start```
 6. Navigate to `http://localhost:3000/`
 7. (optional) Run in terminal `npm i -g cross-env`
+8. To run the database, navigate in the terminal to the react-backend directory, then run "node bin/www". 
+9. Navigate to http://localhost:3001/ where you should see the welcome page for the database.
 
 

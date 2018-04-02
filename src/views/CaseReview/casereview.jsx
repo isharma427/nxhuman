@@ -20,7 +20,7 @@ function Icons({ ...props }) {
       <ItemGrid xs={12} sm={12} md={12}>
         <RegularCard
           plainCard
-          cardTitle="Summary of your Case"
+          cardTitle="Case Review"
           cardSubtitle={
             <P>
               {" "}
