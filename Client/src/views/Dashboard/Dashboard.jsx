@@ -86,7 +86,8 @@ class Dashboard extends React.Component {
                       />
                       {<Button 
             color="primary"
-            onClick = {addCase(this.casenamevalue)}
+            onClick = {addCase(this.state.text)}
+            onClick = {getCase()}
             >Submit
             <a>
             </a>
@@ -104,27 +105,36 @@ class Dashboard extends React.Component {
           
             </Button>}
 
-
-                      
-       
-        
       </div>
-    );
-
-    
-  }
-  
+    );  
+  }  
 }
  function addCase(event) {
   
-  axios.post('http://nxhuman.herokuapp.com/api/dashboard', {
-    headers: {"Access-Control-Allow-Origin": "*"},
+  axios.post('/api/dashboard', {
     content: event
   }).then(function (response) {
     console.log(response);
+    console.log(this.state.text);
   })
   .catch(function (error) {
     console.log(error);
+    console.log(this.state.text);
+  });
+  
+ }
+
+ function getCase() {
+  
+  axios.get('/api/getcaseuserdata', {
+    content: event
+  }).then(function (response) {
+    console.log(response);
+    console.log(this.state.text);
+  })
+  .catch(function (error) {
+    console.log(error);
+    console.log(this.state.text);
   });
   
  };
