@@ -19,7 +19,7 @@ function Login({ ...props }) {
      
     <div>
       <Progress
-          percent={25}
+          percent={0}
           status="active"
       
         />
@@ -60,8 +60,6 @@ function Login({ ...props }) {
             footer={<Button 
             color="primary"
             href="/dashboard">Next Step
-            <a>
-            </a>
             </Button>}
           />
         </ItemGrid>
