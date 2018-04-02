@@ -115,11 +115,11 @@ class Dashboard extends React.Component {
     content: event
   }).then(function (response) {
     console.log(response);
-    console.log(this.state.text);
+    //console.log(this.state.text);
   })
   .catch(function (error) {
     console.log(error);
-    console.log(this.state.text);
+    //console.log(this.state.text);
   });
   
  }
