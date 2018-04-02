@@ -16,7 +16,7 @@ import {
     RegularCard,
     Button,
     ItemGrid
-} from "components";
+} from "../../components";
 
 const style = {
     typo: {
