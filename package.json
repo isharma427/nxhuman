@@ -4,7 +4,7 @@
   "description": "A simple records system using MongoDB, Express.js, React.js, and Node.js with real-time CRUD operations using Socket.io",
   "main": "server.js",
   "scripts": {
-    "start": "cd Client/ && npm install && npm start && cd .. && npm install && node server",
+    "start": "npm install && node server && cd Client/ && npm install && npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
