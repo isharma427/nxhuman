@@ -49,7 +49,7 @@ function PageHeader({ ...props }) {
 
             <RegularCard
                 cardTitle={"Student Dialogue"}
-                cardSubtitle={"Use the right arrow key to see more!"}
+                cardSubtitle={"Scroll down to see more!"}
             />
         </div>
     );
@@ -60,7 +60,7 @@ function PageFooter({ ...props }) {
         <div>
             <Button
                 color="primary">Next Step
-                <a href="/src/views/CaseReview" >
+                <a href="/src/views/Icons" >
                 </a>
             </Button>
         </div>
@@ -302,43 +302,13 @@ class DialogueForm extends Component {
         };
 
         const flexItem = {
-            width: 1000,
+            width: 500,
             height: 850,
             alignItems: 'center',
             justifyContent: 'center',
             display: 'flex',
             flexDirection: 'column',
-            padding:'20px'
-        };
-
-        const problemItem = {
-            width: 1500,
-            height: 850,
-            alignItems: 'center',
-            justifyContent: 'center',
-            display: 'flex',
-            flexDirection: 'column',
-            padding:'20px'
-        };
-
-        const diagnosisItem = {
-            width: 8000,
-            height: 850,
-            alignItems: 'center',
-            justifyContent: 'center',
-            display: 'flex',
-            flexDirection: 'column',
-            padding:'20px'
-        };
-
-        const submitItem = {
-            width: 250,
-            height: 850,
-            alignItems: 'center',
-            justifyContent: 'center',
-            display: 'flex',
-            flexDirection: 'column',
-            padding:'20px'
+            padding: '20px'
         };
 
         return (
@@ -362,6 +332,8 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                             </Card>
+                        </ListItem>
+                        <ListItem>
                             <Card style={flexItem}>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>Patient Response</InputLabel>
@@ -436,6 +408,8 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                             </Card>
+                        </ListItem>
+                        <ListItem>
                             <Card style={flexItem}>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>Nice to see you! Let's begin.</InputLabel>
@@ -452,6 +426,8 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                             </Card>
+                        </ListItem>
+                        <ListItem>
                             <Card style={flexItem}>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>Patient Response</InputLabel>
@@ -544,6 +520,8 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                             </Card>
+                        </ListItem>
+                        <ListItem>
                             <Card style={flexItem}>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>Patient Response</InputLabel>
@@ -618,6 +596,8 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                             </Card>
+                        </ListItem>
+                        <ListItem>
                             <Card style={flexItem}>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>Can you elaborate?</InputLabel>
@@ -648,6 +628,8 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                             </Card>
+                        </ListItem>
+                        <ListItem>
                             <Card style={flexItem}>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>Patient Response</InputLabel>
@@ -796,7 +778,7 @@ class DialogueForm extends Component {
                             </Card>
                         </ListItem>
                         <ListItem>
-                            <Card style={problemItem}>
+                            <Card style={flexItem}>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>What brings you in today?</InputLabel>
                                     <Input id="problem"
@@ -812,7 +794,9 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                             </Card>
-                            <Card style={problemItem}>
+                        </ListItem>
+                        <ListItem>
+                            <Card style={flexItem}>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>Patient Response</InputLabel>
                                     <Input id="posPatient6"
@@ -886,7 +870,9 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                             </Card>
-                            <Card style={problemItem}>
+                        </ListItem>
+                        <ListItem>
+                            <Card style={flexItem}>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>Follow-up questions.</InputLabel>
                                     <Input id="problem2"
@@ -916,7 +902,9 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                             </Card>
-                            <Card style={problemItem}>
+                        </ListItem>
+                        <ListItem>
+                            <Card style={flexItem}>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>Patient Response</InputLabel>
                                     <Input id="posPatient7"
@@ -1062,7 +1050,9 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                             </Card>
-                            <Card style={problemItem}>
+                        </ListItem>
+                        <ListItem>
+                            <Card style={flexItem}>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>Additional concerns?</InputLabel>
                                     <Input id="problem4"
@@ -1078,7 +1068,9 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                             </Card>
-                            <Card style={problemItem}>
+                        </ListItem>
+                        <ListItem>
+                            <Card style={flexItem}>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>Patient Response</InputLabel>
                                     <Input id="posPatient9"
@@ -1170,6 +1162,8 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                             </Card>
+                        </ListItem>
+                        <ListItem>
                             <Card style={flexItem}>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>Patient Response</InputLabel>
@@ -1244,6 +1238,8 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                             </Card>
+                        </ListItem>
+                        <ListItem>
                             <Card style={flexItem}>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>Tell me more.</InputLabel>
@@ -1274,6 +1270,8 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                             </Card>
+                        </ListItem>
+                        <ListItem>
                             <Card style={flexItem}>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>Patient Response</InputLabel>
@@ -1422,7 +1420,7 @@ class DialogueForm extends Component {
                             </Card>
                         </ListItem>
                         <ListItem>
-                            <Card style={diagnosisItem}>
+                            <Card style={flexItem}>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>Your course of treatment is ...</InputLabel>
                                     <Input id="diagnosis"
@@ -1438,7 +1436,9 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                             </Card>
-                            <Card style={diagnosisItem}>
+                        </ListItem>
+                        <ListItem>
+                            <Card style={flexItem}>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>Patient Response</InputLabel>
                                     <Input id="posPatient13"
@@ -1512,7 +1512,9 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                             </Card>
-                            <Card style={diagnosisItem}>
+                        </ListItem>
+                        <ListItem>
+                            <Card style={flexItem}>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>Any additional questions?</InputLabel>
                                     <Input id="diagnosis2"
@@ -1528,7 +1530,9 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                             </Card>
-                            <Card style={diagnosisItem}>
+                        </ListItem>
+                        <ListItem>
+                            <Card style={flexItem}>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>Patient Response</InputLabel>
                                     <Input id="posPatient14"
@@ -1602,7 +1606,9 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                             </Card>
-                            <Card style={diagnosisItem}>
+                        </ListItem>
+                        <ListItem>
+                            <Card style={flexItem}>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>Follow-up answer.</InputLabel>
                                     <Input id="diagnosis3"
@@ -1632,7 +1638,9 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                             </Card>
-                            <Card style={diagnosisItem}>
+                        </ListItem>
+                        <ListItem>
+                            <Card style={flexItem}>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>Patient Response</InputLabel>
                                     <Input id="posPatient15"
@@ -1778,7 +1786,9 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                             </Card>
-                            <Card style={diagnosisItem}>
+                        </ListItem>
+                        <ListItem>
+                            <Card style={flexItem}>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>Additional instructions.</InputLabel>
                                     <Input id="diagnosis5"
@@ -1794,7 +1804,9 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                             </Card>
-                            <Card style={diagnosisItem}>
+                        </ListItem>
+                        <ListItem>
+                            <Card style={flexItem}>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>Patient Response</InputLabel>
                                     <Input id="posPatient17"
@@ -1868,7 +1880,9 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                             </Card>
-                            <Card style={diagnosisItem}>
+                        </ListItem>
+                        <ListItem>
+                            <Card style={flexItem}>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>Take care!</InputLabel>
                                     <Input id="diagnosis6"
@@ -1884,7 +1898,9 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                             </Card>
-                            <Card style={diagnosisItem}>
+                        </ListItem>
+                        <ListItem>
+                            <Card style={flexItem}>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>Patient Response</InputLabel>
                                     <Input id="posPatient18"
@@ -1961,7 +1977,7 @@ class DialogueForm extends Component {
                         </ListItem>
 
                         <ListItem>
-                            <Card style={submitItem}>
+                            <Card style={flexItem}>
                                 <input type="submit" value="Submit" />
                             </Card>
                         </ListItem>
