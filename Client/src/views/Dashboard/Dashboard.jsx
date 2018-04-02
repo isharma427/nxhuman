@@ -86,7 +86,7 @@ class Dashboard extends React.Component {
                       />
                       {<Button 
             color="primary"
-            onClick = {addCase({item: "Test123"})}
+            onClick = {addCase({item: this.casenamevalue})}
             //onClick = {getCase()}
             >Submit
             <a>
@@ -111,7 +111,7 @@ class Dashboard extends React.Component {
 }
  function addCase(event) {
   
-  axios.post('/api1', {
+  axios.post('/api/api1insert', {
     content: event
   }).then(function (response) {
     console.log(response);

@@ -46,7 +46,11 @@ app.use(cors());
 
 // Use express's default error handling middleware
 app.use((err, req, res, next) => {
-  
+  res.sendFile(path.join(__dirname, 'Client/src/index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  });
 });
 
 // Start the server
@@ -57,9 +61,8 @@ const server = app.listen(port, () => {
 });
 
 // Initialize routes middleware
-app.use(function(req,res,next){
-  req.db = db;
-  next();
-});
-app.use('/api/dashboard', require('./Client/src/routes/caseoverview'));
-
+// app.use(function(err, req,res,next){
+//   req.db = db;
+//   //next(err);
+// });
+app.use('/api1', require('./Client/src/routes/caseoverview'));
