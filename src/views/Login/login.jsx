@@ -19,7 +19,7 @@ function Login({ ...props }) {
      
     <div>
       <Progress
-          percent={25}
+          percent={0}
           status="active"
       
         />
