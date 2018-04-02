@@ -86,8 +86,8 @@ class Dashboard extends React.Component {
                       />
                       {<Button 
             color="primary"
-            onClick = {addCase(this.state.text)}
-            onClick = {getCase()}
+            onClick = {addCase({item: "Test123"})}
+            //onClick = {getCase()}
             >Submit
             <a>
             </a>

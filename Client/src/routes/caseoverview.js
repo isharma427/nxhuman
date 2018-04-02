@@ -10,10 +10,10 @@ const url = 'mongodb://nxhuman:hubal2018@ds115219.mlab.com:15219/heroku_cj4zfrd2
 
 router.post('/api/dashboard', function(req, res, next) {
   var item = {
-    username: req.body.content
+    name: item
   };
 
-  mongo.connect(config.db, function(err, db) {
+  mongo.connect(url, function(err, db) {
     assert.equal(null, err);
     db.collection("casenamelist").insertOne(item, function(err, result) {
       assert.equal(null, err);
