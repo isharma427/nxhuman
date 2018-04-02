@@ -58,9 +58,9 @@ function Login({ ...props }) {
               </div>
             }
             footer={<Button 
-            color="primary">Next Step
-            <a href="/src/views/TableList" >
-            </a>
+            color="primary"
+            href="/src/views/Dashboard/Dashboard.jsx">
+            Next Step
             </Button>}
           />
         </ItemGrid>

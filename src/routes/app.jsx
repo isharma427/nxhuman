@@ -64,7 +64,7 @@ const appRoutes = [
  
 
 
-{ redirect: true, path: "/", to: "/dashboard", navbarName: "Redirect" }
+{ redirect: true, path: "/", to: "/login", navbarName: "Redirect" }
 ];
 
 export default appRoutes;
