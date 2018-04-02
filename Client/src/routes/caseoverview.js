@@ -24,7 +24,7 @@ router.post('/api1', function(req, res, next) {
 
   res.redirect('/');
 });
-
+/* 
 router.get('/api/getcaseuserdata', function(req, res, next) {
   var resultArray = [];
   mongo.connect(url, function(err, db) {
@@ -38,7 +38,7 @@ router.get('/api/getcaseuserdata', function(req, res, next) {
       res.render('index', {items: resultArray});
     });
   });
-});
+}); */
 
 
 module.exports = router;

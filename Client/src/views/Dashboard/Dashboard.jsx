@@ -124,7 +124,7 @@ class Dashboard extends React.Component {
   
  }
 
- function getCase() {
+ /* function getCase() {
   
   axios.get('/api/getcaseuserdata', {
   }).then(function (response) {
@@ -134,7 +134,7 @@ class Dashboard extends React.Component {
     console.log(error);
   });
   
- };
+ }; */
 
 Dashboard.propTypes = {
   classes: PropTypes.object.isRequired
