@@ -127,7 +127,6 @@ class Dashboard extends React.Component {
  function getCase() {
   
   axios.get('/api/getcaseuserdata', {
-    content: event
   }).then(function (response) {
     console.log(response);
     console.log(this.state.text);
