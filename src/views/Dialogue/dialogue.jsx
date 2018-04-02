@@ -49,7 +49,7 @@ function PageHeader({ ...props }) {
 
             <RegularCard
                 cardTitle={"Student Dialogue"}
-                cardSubtitle={"Scroll down to see more!"}
+                cardSubtitle={"Use the right arrow key to see more!"}
             />
         </div>
     );
