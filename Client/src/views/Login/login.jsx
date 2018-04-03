@@ -46,11 +46,14 @@ function Login({ ...props }) {
                   <ItemGrid xs={12} sm={12} md={3}>
                     <CustomInput
                        labelText="Password"
-                      id="password"
+                        id="password"
+                        type = "password"
+                        name = "password"
                       formControlProps={{
                         fullWidth: true
                       }}
                     />
+                      
                   </ItemGrid>
                   
                 </Grid>
