@@ -3,12 +3,6 @@
   "version": "0.1.0",
   "description": "A simple records system using MongoDB, Express.js, React.js, and Node.js with real-time CRUD operations using Socket.io",
   "main": "server.js",
-  "scripts": {
-    "start": "react-scripts start Client/ && CORS=1 node Server/server.js",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cefjoeii/mern-crud.git"
