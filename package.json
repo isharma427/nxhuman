@@ -1,0 +1,8 @@
+{   "name": "nxHuman",
+    "version": "0.0.0",
+    "description": "Case Authoring Tool for the UNC Pharmacy School nxHuman Patient Simulator",
+    "scripts": {
+      "start": "cd Client/ && npm start && cd ../Server/ && npm start",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    }
+}
