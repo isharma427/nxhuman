@@ -46,7 +46,7 @@ app.use(cors());
 
 // Use express's default error handling middleware
 app.use((err, req, res, next) => {
-  res.sendFile(path.join(__dirname, 'Client/src/index.html'), function(err) {
+  res.sendFile(path.join(__dirname, '../Client/src/index.html'), function(err) {
     if (err) {
       res.status(500).send(err)
     }
@@ -75,4 +75,4 @@ console.log("Listening on Port 3002");
 //   req.db = db;
 //   //next(err);
 // });
-app.use('/api1', require('./Client/src/routes/caseoverview'));
+app.use('/api1', require('../Client/src/routes/caseoverview'));
