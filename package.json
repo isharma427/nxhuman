@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "CORS=1 node Server/server.js && react-scripts start Client/",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
   "repository": {
     "type": "git",
