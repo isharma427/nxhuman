@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-node-modules
-node_modules
-=======
->>>>>>> feff226107625aa3f418f26ed3c56a34dee7aebd
+package-lock.json
 node_modules
 node_modules
 package-lock.json
-node_modules
-package-lock.json
-package-lock.json
-node_modules
