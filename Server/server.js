@@ -75,4 +75,4 @@ console.log("Listening on Port 3002");
 //   req.db = db;
 //   //next(err);
 // });
-app.use('/api1', require('../Client/src/routes/caseoverview'));
+app.use('/', require('../src/routes/caseoverview'));

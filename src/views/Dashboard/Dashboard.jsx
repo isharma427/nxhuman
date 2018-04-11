@@ -5,6 +5,8 @@ import "react-sweet-progress/lib/style.css";
 // react plugin for creating charts
 import ChartistGraph from "react-chartist";
 import axios from 'axios';
+import ajax from 'ajax';
+import $ from 'jquery'; 
 
 import {
   ContentCopy,
@@ -46,13 +48,31 @@ class Dashboard extends React.Component {
   state = {
     value: 0
   };
-  handleChange = (event, value) => {
-    this.setState({ value });
-  };
 
-  handleChangeIndex = index => {
-    this.setState({ value: index });
-  };
+  constructor(props) {
+    super(props);
+    this.state = {value: ''};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    alert('A name was submitted: ' + this.state.value);
+    $.ajax({
+      method: "POST",
+      url: "localhost:3002/test",
+      data: this.state.value
+      })
+      .done(function( msg ) {
+      alert( "Data Saved: " + msg );
+    })
+    event.preventDefault();
+  }
   render() {
     return (
       <div>
@@ -81,22 +101,33 @@ class Dashboard extends React.Component {
                           disabled: false
                         }}
                         onChangeText={(text) => this.setState({text})}
+                        
                         casenamevalue={this.state.text}
-                        onChange={ this.handleChange.bind(this) }
+                    
+                        
                       />
                       {<Button 
-            color="primary"
-            onClick = {addCase({item: this.casenamevalue})}
+                        color="primary"
+                        
             //onClick = {getCase()}
             >Submit
             <a>
             </a>
-            </Button>} 
+            </Button> 
                       
-                    </ItemGrid>   
-             } 
+            }</ItemGrid>   
+          } 
              />
           </Grid>
+          
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Name:
+          <input type="text" value={this.state.value} onChange={this.handleChange} />
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+    );
         
           
             {<Button 
@@ -109,18 +140,17 @@ class Dashboard extends React.Component {
     );  
   }  
 }
+
  function addCase(event) {
   
-  axios.post('/api/api1insert', {
-    content: event
-  }).then(function (response) {
-    console.log(response);
-    //console.log(this.state.text);
+  $.ajax({
+    method: "POST",
+    url: "localhost:3002/test",
+    data: event
   })
-  .catch(function (error) {
-    console.log(error);
-    //console.log(this.state.text);
-  });
+    .done(function( msg ) {
+      alert( "Data Saved: " + msg );
+    });
   
  }
 
