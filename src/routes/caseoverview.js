@@ -11,7 +11,7 @@ var mongodb= require('mongodb');
 var MongoClient= mongodb.MongoClient;
 
 
-router.post('test', function(req, res, next) {
+router.post('/test', function(req, res, next) {
   var item = "received data"
 
   MongoClient.connect(url, function (err, client) {
@@ -31,7 +31,7 @@ router.post('test', function(req, res, next) {
   res.redirect('/');
 });
  
-router.get('test', function(req, res, next) {
+router.get('/test', function(req, res, next) {
   var resultArray = [];
   MongoClient.connect(url, function (err, client) {
     if (err) throw err;
