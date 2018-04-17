@@ -50,28 +50,6 @@ import dashboardStyle from "../../variables/styles/dashboardStyle";
 
 
 
-let appId = 'nxhumanapi-hpevv';
-let stitchClientPromise = StitchClientFactory.create(appId, options);
-if (process.env.APP_ID) {
-  appId = process.env.APP_ID;
-}
-
-let mongodbService = "mongodb-atlas";
-if (process.env.MONGODB_SERVICE) {
-  mongodbService = process.env.MONGODB_SERVICE;
-}
-
-let options = {};
-if (process.env.STITCH_URL) {
-  options.baseUrl = process.env.STITCH_URL;
-}
-
-
-require("./todo.scss");
-
-
-
-
 
 class Dashboard extends React.Component {
   state = {

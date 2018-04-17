@@ -134,13 +134,13 @@ const Sidebar = ({ ...props }) => {
       </Hidden>
     
     </div>
-  );
-;
+  
 
+        )
 Sidebar.propTypes = {
   classes: PropTypes.object.isRequired
 };
-
+  
 
 }
 
