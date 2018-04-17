@@ -48,14 +48,30 @@ import {
 
 import dashboardStyle from "../../variables/styles/dashboardStyle";
 
+let appId = 'nxhumanapi-hpevv';
+let stitchClientPromise = StitchClientFactory.create(appId);
+stitchClientPromise.then(stitchClient => stitchClient.login())
+  .then(() => console.log('logged in as: '))
+  .catch(e => console.log('error: ', e));
 
-
+function addItem(item) {
+stitchClientPromise.then(stitchClient => {
+    // mongodb1 is the name of the mongodb service registered with the app.
+    let db = stitchClient.service('mongodb','mongodb-atlas').db('nxhuman');
+    let itemsCollection = db.collection('test');
+    // CRUD operations:
+    const userId = stitchClient.authedId();
+    return db.collection('test').updateOne(
+      
+        { owner_id: userId, x: item },
+      
+      
+    );
+  }).then(result => console.log('success: ', result))
+    .catch(e => console.log('error: ', e));
+}
 
 class Dashboard extends React.Component {
-  state = {
-    value: 0
-  };
-
   constructor(props) {
     super(props);
     this.state = {value: ''};
@@ -66,27 +82,19 @@ class Dashboard extends React.Component {
 
   handleChange(event) {
     this.setState({value: event.target.value});
+    addItem(this.state.value);
   }
 
   handleSubmit(event) {
     alert('A name was submitted: ' + this.state.value);
-    $.ajax({
-      method: "POST",
-      url: "localhost:3002/test",
-      data: this.state.value
-      })
-      .done(function( msg ) {
-      alert( "Data Saved: " + msg );
-    })
     event.preventDefault();
   }
+
+
+  
   render() {
     return (
       <div>
-        
-  
-
-
 
         <Progress
           percent={0}
@@ -103,29 +111,21 @@ class Dashboard extends React.Component {
             cardSubtitle="Create a Name for your Case"
             content={
               <ItemGrid xs={12} sm={12} md={5}>
-                      <CustomInput
-                        labelText="Case Name"
-                        id="case-id"
-                        formControlProps={{
-                          fullWidth: true
-                        }}
-                        inputProps={{
-                          disabled: false
-                        }}
-                        onChangeText={(text) => this.setState({text})}
+                      <form onSubmit={this.handleSubmit}>
+        <label>
+          Name:
+          <input type="text" value={this.state.value} onChange={this.handleChange} />
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+                      {<button 
                         
-                        casenamevalue={this.state.text}
-                    
                         
-                      />
-                      {<Button 
-                        color="primary"
-                        
-            //onClick = {getCase()}
+            onClick = {addItem(this.state.text)}
             >Submit
             <a>
             </a>
-            </Button> 
+            </button> 
                       
             }</ItemGrid>   
           } 
@@ -155,30 +155,9 @@ class Dashboard extends React.Component {
   }  
 }
 
- function addCase(event) {
-  
-  $.ajax({
-    method: "POST",
-    url: "localhost:3002/test",
-    data: event
-  })
-    .done(function( msg ) {
-      alert( "Data Saved: " + msg );
-    });
-  
- }
+ 
 
- /* function getCase() {
-  
-  axios.get('/api/getcaseuserdata', {
-  }).then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-  
- }; */
+ 
 
 Dashboard.propTypes = {
   classes: PropTypes.object.isRequired
