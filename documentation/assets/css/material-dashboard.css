@@ -148,11 +148,11 @@
 }
 
 .slider.noUi-connect {
-    background-color: #9c27b0;
+    background-color: #99badd;
 }
 
 .slider .noUi-handle {
-    border-color: #9c27b0;
+    border-color: #99badd;
 }
 
 .slider.slider-info .noUi-connect,
@@ -624,7 +624,7 @@ h2.title {
 }
 
 .text-primary {
-    color: #9c27b0;
+    color: #99badd;
 }
 
 .text-danger {
