@@ -10,11 +10,39 @@ import {
   ItemGrid
 } from "../../components";
 
+import { render } from 'react-dom';
+import { StitchClientFactory } from 'mongodb-stitch';
+import { browserHistory, Route } from 'react-router'
+import { BrowserRouter, Link } from 'react-router-dom'
+
 import avatar from "../../assets/img/faces/marc.jpg";
+let appId = "nxhumanapi-hpevv";
 
 
+function myauth() {
+  
+if (process.env.APP_ID) {
+  appId = process.env.APP_ID;
+}
+
+let mongodbService = "mongodb-atlas";
+if (process.env.MONGODB_SERVICE) {
+  mongodbService = process.env.MONGODB_SERVICE;
+}
+
+let options = {};
+if (process.env.STITCH_URL) {
+  options.baseUrl = process.env.STITCH_URL;
+}
+
+let stitchClientPromise = StitchClientFactory.create(appId,options);
+
+  stitchClientPromise.then(stichClient => stichClient.authenticate("google"))
+}
+  
 
 function Login({ ...props }) {
+ 
   return (
      
     <div>
@@ -41,9 +69,8 @@ function Login({ ...props }) {
                       inputProps={{
                         disabled: false
                       }}
+            
                     />
-                  </ItemGrid>
-                  <ItemGrid xs={12} sm={12} md={3}>
                     <CustomInput
                        labelText="Password"
                         id="password"
@@ -52,7 +79,16 @@ function Login({ ...props }) {
                       formControlProps={{
                         fullWidth: true
                       }}
+                     
                     />
+                    <button 
+                    //color="primary"
+                    onClick = {() => myauth()}
+                    >Login!
+                    </button>
+                  </ItemGrid>
+                  <ItemGrid xs={12} sm={12} md={3}>
+                    
                       
                   </ItemGrid>
                   

@@ -14,6 +14,9 @@ import appStyle from "../../variables/styles/appStyle.jsx";
 
 import image from "../../assets/img/sidebar-2.jpg";
 import logo from "../../assets/img/favicon.png";
+import { render } from "react-dom";
+import { StitchClientFactory } from "mongodb-stitch";
+
 
 const switchRoutes = (
   <Switch>
@@ -82,5 +85,7 @@ class App extends React.Component {
 App.propTypes = {
   classes: PropTypes.object.isRequired
 };
+
+
 
 export default withStyles(appStyle)(App);

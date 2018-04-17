@@ -21,7 +21,44 @@ router.post('/test', function(req, res, next) {
 
     db.collection("casenamelist").insertOne(item, function(err, result) {
       assert.equal(null, err);
-      console.log('Item inserted');
+      console.log('Item inserted from field');
+      client.close();
+      res.json(item);
+    });
+  });
+
+
+  res.redirect('/');
+});
+
+const stitch = require("mongodb-stitch")
+const clientPromise = stitch.StitchClientFactory.create('nxhumanapi-hpevv');
+clientPromise.then(client => {
+  const db = client.service('mongodb', 'mongodb-atlas').db('nxhuman');
+  client.login().then(() =>
+    db.collection('test').updateOne({owner_id: client.authedId()}, {$set:{number:42}}, {upsert:true}),
+    db.collection('test').insertOne({test_id: "hi"})
+  ).then(() =>
+    db.collection('test').find({owner_id: client.authedId()}).limit(100).execute()
+  ).then(docs => {
+    console.log("Found docs", docs)
+    console.log("[MongoDB Stitch] Connected to Stitch")
+  }).catch(err => {
+    console.error(err)
+  });
+});
+
+router.post('/test', function(req, res, next) {
+  var item = "received data"
+
+  MongoClient.connect(url, function (err, client) {
+  if (err) throw err;
+  console.log("Connected successfully to server");
+  var db = client.db('mytestingdb');
+
+    db.collection("casenamelist").insertOne("Hi", function(err, result) {
+      assert.equal(null, err);
+      console.log('Hardcode Item');
       client.close();
       res.json(item);
     });

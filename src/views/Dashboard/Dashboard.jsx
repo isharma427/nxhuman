@@ -1,3 +1,5 @@
+/* global location */
+/* eslint no-restricted-globals: ["off", "location"] */
 import React from "react";
 import PropTypes from "prop-types";
 import { Progress } from 'react-sweet-progress';
@@ -7,6 +9,11 @@ import ChartistGraph from "react-chartist";
 import axios from 'axios';
 import ajax from 'ajax';
 import $ from 'jquery'; 
+import { render } from 'react-dom';
+import { StitchClientFactory } from 'mongodb-stitch';
+import { browserHistory, Route } from 'react-router'
+import { BrowserRouter, Link } from 'react-router-dom'
+
 
 import {
   ContentCopy,
@@ -43,6 +50,28 @@ import dashboardStyle from "../../variables/styles/dashboardStyle";
 
 
 
+let appId = 'nxhumanapi-hpevv';
+let stitchClientPromise = StitchClientFactory.create(appId, options);
+if (process.env.APP_ID) {
+  appId = process.env.APP_ID;
+}
+
+let mongodbService = "mongodb-atlas";
+if (process.env.MONGODB_SERVICE) {
+  mongodbService = process.env.MONGODB_SERVICE;
+}
+
+let options = {};
+if (process.env.STITCH_URL) {
+  options.baseUrl = process.env.STITCH_URL;
+}
+
+
+require("./todo.scss");
+
+
+
+
 
 class Dashboard extends React.Component {
   state = {
@@ -76,6 +105,11 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div>
+        
+  
+
+
+
         <Progress
           percent={0}
           status="active"
@@ -128,6 +162,7 @@ class Dashboard extends React.Component {
         <input type="submit" value="Submit" />
       </form>
     );
+    
         
           
             {<Button 
@@ -135,6 +170,7 @@ class Dashboard extends React.Component {
             href="/caseoverview">Next Step
           
             </Button>}
+            
 
       </div>
     );  

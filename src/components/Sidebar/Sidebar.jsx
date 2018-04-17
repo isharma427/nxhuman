@@ -1,3 +1,5 @@
+/* global location */
+/* eslint no-restricted-globals: ["off", "location"] */
 import React from "react";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
@@ -6,6 +8,10 @@ import CircularProgressbar from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { Progress } from 'react-sweet-progress';
 import "react-sweet-progress/lib/style.css";
+import { render } from "react-dom";
+import { StitchClientFactory } from "mongodb-stitch";
+import { browserHistory, Route } from "react-router";
+import { BrowserRouter, Link } from "react-router-dom";
 import {
   withStyles,
   Drawer,
@@ -65,6 +71,7 @@ const Sidebar = ({ ...props }) => {
   );
   var brand = (
     <div className={classes.logo}>
+    
       <a href="https://www.creative-tim.com" className={classes.logoLink}>
         <div className={classes.logoImage}>
           <img src={logo} alt="logo" className={classes.img} />
@@ -125,14 +132,16 @@ const Sidebar = ({ ...props }) => {
           
         </Drawer>
       </Hidden>
-     
+    
     </div>
   );
-};
+;
 
 Sidebar.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
 
-export default withStyles(sidebarStyle)(Sidebar);
+}
+
+export default withStyles(sidebarStyle)(Sidebar)
