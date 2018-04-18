@@ -59,9 +59,8 @@ function PageFooter({ ...props }) {
     return (
         <div>
             <Button
-                color="primary">Next Step
-                <a href="/src/views/CaseReview" >
-                </a>
+                color="primary"
+                href="/review">Next Step
             </Button>
         </div>
     );
