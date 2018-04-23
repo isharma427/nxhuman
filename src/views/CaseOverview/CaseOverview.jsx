@@ -24,14 +24,14 @@ function UserProfile({ ...props }) {
       
         />
       <Grid container>
-        <ItemGrid xs={12} sm={12} md={8}>
+        <ItemGrid xs={12} sm={12} md={4}>
           <RegularCard
             cardTitle="Overall Patient Information"
             cardSubtitle="Please Fill Out!"
             content={
               <div>
                 <Grid container>
-                  <ItemGrid xs={12} sm={12} md={5}>
+                  <ItemGrid xs={12} sm={12} md={6}>
                     <CustomInput
                       labelText="Patient Condition"
                       id="patient-condition"
@@ -43,24 +43,8 @@ function UserProfile({ ...props }) {
                       }}
                     />
                   </ItemGrid>
-                  <ItemGrid xs={12} sm={12} md={3}>
-                    <CustomInput
-                       labelText="Age of Patient"
-                      id="age-of-patient"
-                      formControlProps={{
-                        fullWidth: true
-                      }}
-                    />
-                  </ItemGrid>
-                  <ItemGrid xs={12} sm={12} md={4}>
-                    <CustomInput
-                      labelText="Height of Patient"
-                      id="height"
-                      formControlProps={{
-                        fullWidth: true
-                      }}
-                    />
-                  </ItemGrid>
+                  
+                  
                 </Grid>
                 <Grid container>
                   <ItemGrid xs={12} sm={12} md={6}>
@@ -71,8 +55,6 @@ function UserProfile({ ...props }) {
                         fullWidth: true
                       }}
                     />
-                  </ItemGrid>
-                  <ItemGrid xs={12} sm={12} md={6}>
                     <CustomInput
                       labelText="Last Name"
                       id="last-name"
@@ -81,18 +63,11 @@ function UserProfile({ ...props }) {
                       }}
                     />
                   </ItemGrid>
+              
                 </Grid>
                 <Grid container>
-                  <ItemGrid xs={12} sm={12} md={4}>
-                    <CustomInput
-                      labelText="Race"
-                      id="race"
-                      formControlProps={{
-                        fullWidth: true
-                      }}
-                    />
-                  </ItemGrid>
-                  <ItemGrid xs={12} sm={12} md={4}>
+                  
+                  <ItemGrid xs={12} sm={12} md={6}>
                     <CustomInput
                       labelText="Location of Case"
                       id="case-location"
@@ -106,7 +81,7 @@ function UserProfile({ ...props }) {
                   </ItemGrid>
                 </Grid>
                 <Grid container>
-                  <ItemGrid xs={12} sm={12} md={12}>
+                  <ItemGrid xs={12} sm={12} md={10}>
                     <InputLabel style={{ color: "#AAAAAA" }}>
                       
                     </InputLabel>
@@ -134,7 +109,7 @@ function UserProfile({ ...props }) {
             </Button>}
           />
         </ItemGrid>
-        <ItemGrid xs={12} sm={12} md={4}>
+        <ItemGrid xs={12} sm={12} md={15}>
           
         </ItemGrid>
       </Grid>
