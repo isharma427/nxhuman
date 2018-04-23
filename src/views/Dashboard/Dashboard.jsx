@@ -116,33 +116,14 @@ class Dashboard extends React.Component {
           Name:
           <input type="text" value={this.state.value} onChange={this.handleChange} />
         </label>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit" onClick = {addItem(this.state.text)} />
       </form>
-                      {<button 
-                        
-                        
-            onClick = {addItem(this.state.text)}
-            >Submit
-            <a>
-            </a>
-            </button> 
                       
-            }</ItemGrid>   
+                      
+            </ItemGrid>   
           } 
              />
-          </Grid>
-          
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Name:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
-    );
-    
-        
-          
+          </Grid>   
             {<Button 
             color="primary"
             href="/caseoverview">Next Step
