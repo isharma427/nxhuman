@@ -125,9 +125,10 @@ class Dashboard extends React.Component {
              />
           </Grid>   
             {<Button 
+            onClick = {addItem(this.state.text)}
             color="primary"
             href="/caseoverview">Next Step
-          
+            
             </Button>}
             
 
