@@ -22,115 +22,15 @@ function PatientChart() {
   return (
     <div>
      
-      <Grid container>
-        <ItemGrid xs={12} sm={12} md={10}>
+      <Grid container flexdirection = 'column'>
+        <ItemGrid xs={12} sm={12} md={4}>
           <RegularCard
           //Patient Info
-            cardTitle="Patient and Case Information"
+            cardTitle="Patient Height and Weight"
             content={
               <div>
                 <Grid container>
-                  <ItemGrid xs={12} sm={12} md={24}>
-                    <CustomInput
-                      labelText="Case Date"
-                      id="case-date"
-                      formControlProps={{
-                        fullWidth: true
-                      }}
-                      inputProps={{
-                        disabled: false
-                      }}
-                    />
-                    <CustomInput
-                      labelText="Case Title"
-                      id="case-title"
-                      formControlProps={{
-                        fullWidth: true
-                      }}
-                      inputProps={{
-                        disabled: false
-                      }}
-                    />
-                    <CustomInput
-                      labelText="Case Writer"
-                      id="case-writer"
-                      formControlProps={{
-                        fullWidth: true
-                      }}
-                      inputProps={{
-                        disabled: false
-                      }}
-                    />
-                    <CustomInput
-                      labelText="Writer's Email"
-                      id="writers-email"
-                      formControlProps={{
-                        fullWidth: true
-                      }}
-                      inputProps={{
-                        disabled: false
-                      }}
-                    />
-                    <CustomInput
-                      labelText="Patient First Name"
-                      id="patient-first-name"
-                      formControlProps={{
-                        fullWidth: true
-                      }}
-                      inputProps={{
-                        disabled: false
-                      }}
-                    />
-                    <CustomInput
-                      labelText="Patient Last Name"
-                      id="patient-last-name"
-                      formControlProps={{
-                        fullWidth: true
-                      }}
-                      inputProps={{
-                        disabled: false
-                      }}
-                    />
-                    <CustomInput
-                      labelText="Patient Sex"
-                      id="patient-sex"
-                      formControlProps={{
-                        fullWidth: true
-                      }}
-                      inputProps={{
-                        disabled: false
-                      }}
-                    />
-                    <CustomInput
-                      labelText="Patient Ethnicity"
-                      id="patient-ethnicity"
-                      formControlProps={{
-                        fullWidth: true
-                      }}
-                      inputProps={{
-                        disabled: false
-                      }}
-                    />
-                    <CustomInput
-                      labelText="Patient Allergies"
-                      id="patient-allergies"
-                      formControlProps={{
-                        fullWidth: true
-                      }}
-                      inputProps={{
-                        disabled: false
-                      }}
-                    />
-                    <CustomInput
-                      labelText="Patient Age"
-                      id="patient-age"
-                      formControlProps={{
-                        fullWidth: true
-                      }}
-                      inputProps={{
-                        disabled: false
-                      }}
-                    />
+                  <ItemGrid xs={12} sm={12} md={10}>
                     <CustomInput
                       labelText="Patient Weight"
                       id="patient-weight"
@@ -158,19 +58,14 @@ function PatientChart() {
           />
         </ItemGrid>
         <ItemGrid xs={12} sm={12} md={4}>
-          
-        </ItemGrid>
-      </Grid>
-      <Grid container>
-        <ItemGrid xs={12} sm={12} md={10}>
           <RegularCard
-            cardTitle="Social, Medical, and Family History"
+            cardTitle="Family History"
             content={
               <div>
                 <Grid container>
-                  <ItemGrid xs={12} sm={12} md={24}>
+                  <ItemGrid xs={12} sm={12} md={10}>
                     <CustomInput
-                      labelText="General Medical History of Mother"
+                      labelText="Medical History of Mother"
                       id="Mother-History"
                       formControlProps={{
                         fullWidth: true
@@ -179,10 +74,8 @@ function PatientChart() {
                         disabled: false
                       }}
                     />
-                  </ItemGrid>
-                  <ItemGrid xs={12} sm={12} md={24}>
                     <CustomInput
-                      labelText="General Medical History of Father"
+                      labelText="Medical History of Father"
                       id="father-history"
                       formControlProps={{
                         fullWidth: true
@@ -192,23 +85,19 @@ function PatientChart() {
                       }}
                     />
                   </ItemGrid>
+                 
                 </Grid>
               </div>
             }
           />
         </ItemGrid>
         <ItemGrid xs={12} sm={12} md={4}>
-          
-        </ItemGrid>
-      </Grid>
-      <Grid container>
-        <ItemGrid xs={12} sm={12} md={10}>
           <RegularCard
             cardTitle="Endocrine Values"
             content={
               <div>
                 <Grid container>
-                  <ItemGrid xs={12} sm={12} md={24}>
+                  <ItemGrid xs={12} sm={12} md={10}>
                     <CustomInput
                       labelText="Cortisol"
                       id="cortisol"
@@ -219,8 +108,6 @@ function PatientChart() {
                         disabled: false
                       }}
                     />
-                  </ItemGrid>
-                  <ItemGrid xs={12} sm={12} md={24}>
                     <CustomInput
                       labelText="TSH"
                       id="tsh"
@@ -232,22 +119,24 @@ function PatientChart() {
                       }}
                     />
                   </ItemGrid>
+                  
                 </Grid>
               </div>
             }
           />
         </ItemGrid>
+      </Grid>
+
+      <Grid container flexdirection = 'column'>
         <ItemGrid xs={12} sm={12} md={4}>
-          
-        </ItemGrid>
-      </Grid><Grid container>
-        <ItemGrid xs={12} sm={12} md={10}>
           <RegularCard
+          //Patient Info
             cardTitle="Flow and Vitals"
             content={
               <div>
                 <Grid container>
-                  <ItemGrid xs={12} sm={12} md={24}>
+                  <ItemGrid xs={12} sm={12} md={10}>
+                    
                     <CustomInput
                       labelText="Heart Rate"
                       id="heart-rate"
@@ -258,8 +147,6 @@ function PatientChart() {
                         disabled: false
                       }}
                     />
-                  </ItemGrid>
-                  <ItemGrid xs={12} sm={12} md={24}>
                     <CustomInput
                       labelText="Blood Pressure"
                       id="blood-pressure"
@@ -270,6 +157,7 @@ function PatientChart() {
                         disabled: false
                       }}
                     />
+                  
                   </ItemGrid>
                 </Grid>
               </div>
@@ -277,18 +165,14 @@ function PatientChart() {
           />
         </ItemGrid>
         <ItemGrid xs={12} sm={12} md={4}>
-          
-        </ItemGrid>
-      </Grid><Grid container>
-        <ItemGrid xs={12} sm={12} md={10}>
           <RegularCard
             cardTitle="Gas Labs"
             content={
               <div>
                 <Grid container>
-                  <ItemGrid xs={12} sm={12} md={24}>
+                  <ItemGrid xs={12} sm={12} md={10}>
                     <CustomInput
-                      labelText="Pressure of O2"
+                      labelText="Oxygen Pressure"
                       id="o2-pressure"
                       formControlProps={{
                         fullWidth: true
@@ -297,10 +181,8 @@ function PatientChart() {
                         disabled: false
                       }}
                     />
-                  </ItemGrid>
-                  <ItemGrid xs={12} sm={12} md={24}>
                     <CustomInput
-                      labelText="Pressure of CO2"
+                      labelText="Carbon Dioxide Pressure"
                       id="co2-pressure"
                       formControlProps={{
                         fullWidth: true
@@ -310,24 +192,21 @@ function PatientChart() {
                       }}
                     />
                   </ItemGrid>
+                 
                 </Grid>
               </div>
             }
           />
         </ItemGrid>
         <ItemGrid xs={12} sm={12} md={4}>
-          
-        </ItemGrid>
-      </Grid><Grid container>
-        <ItemGrid xs={12} sm={12} md={10}>
           <RegularCard
-            cardTitle="Hematology Information"
+            cardTitle="Hematology Labs"
             content={
               <div>
                 <Grid container>
-                  <ItemGrid xs={12} sm={12} md={24}>
+                  <ItemGrid xs={12} sm={12} md={10}>
                     <CustomInput
-                      labelText="Hemoglobin (g/dL)"
+                      labelText="Hemoglobin (g/dl)"
                       id="hemoglobin"
                       formControlProps={{
                         fullWidth: true
@@ -336,11 +215,9 @@ function PatientChart() {
                         disabled: false
                       }}
                     />
-                  </ItemGrid>
-                  <ItemGrid xs={12} sm={12} md={24}>
                     <CustomInput
-                      labelText="White Blood Count (x103/_l)"
-                      id="white-blood-count"
+                      labelText="White Blood Count (x103/_l"
+                      id="wbc"
                       formControlProps={{
                         fullWidth: true
                       }}
@@ -349,25 +226,27 @@ function PatientChart() {
                       }}
                     />
                   </ItemGrid>
+                  
                 </Grid>
               </div>
             }
           />
         </ItemGrid>
+      </Grid>
+
+      <Grid container flexdirection = 'column'>
         <ItemGrid xs={12} sm={12} md={4}>
-          
-        </ItemGrid>
-      </Grid><Grid container>
-        <ItemGrid xs={12} sm={12} md={10}>
           <RegularCard
+          //Patient Info
             cardTitle="Hospital Examination"
             content={
               <div>
                 <Grid container>
-                  <ItemGrid xs={12} sm={12} md={24}>
+                  <ItemGrid xs={12} sm={12} md={10}>
+                    
                     <CustomInput
-                      labelText="Neck/Lymph Node"
-                      id="necklymph-node"
+                      labelText="Neck/Lymph Node Check"
+                      id="Neck and Lymph"
                       formControlProps={{
                         fullWidth: true
                       }}
@@ -375,11 +254,9 @@ function PatientChart() {
                         disabled: false
                       }}
                     />
-                  </ItemGrid>
-                  <ItemGrid xs={12} sm={12} md={24}>
                     <CustomInput
-                      labelText="Neurology"
-                      id="neuro"
+                      labelText="Neurology Exam"
+                      id="neuro-exam"
                       formControlProps={{
                         fullWidth: true
                       }}
@@ -387,6 +264,7 @@ function PatientChart() {
                         disabled: false
                       }}
                     />
+                  
                   </ItemGrid>
                 </Grid>
               </div>
@@ -394,16 +272,12 @@ function PatientChart() {
           />
         </ItemGrid>
         <ItemGrid xs={12} sm={12} md={4}>
-          
-        </ItemGrid>
-      </Grid><Grid container>
-        <ItemGrid xs={12} sm={12} md={10}>
           <RegularCard
             cardTitle="Immunizations"
             content={
               <div>
                 <Grid container>
-                  <ItemGrid xs={12} sm={12} md={24}>
+                  <ItemGrid xs={12} sm={12} md={10}>
                     <CustomInput
                       labelText="Measles, Mumps, Rubella"
                       id="mmr"
@@ -414,11 +288,9 @@ function PatientChart() {
                         disabled: false
                       }}
                     />
-                  </ItemGrid>
-                  <ItemGrid xs={12} sm={12} md={24}>
                     <CustomInput
-                      labelText="Flu Shot?"
-                      id="flu-shot"
+                      labelText="Flu Shot Current?"
+                      id="flu"
                       formControlProps={{
                         fullWidth: true
                       }}
@@ -427,22 +299,19 @@ function PatientChart() {
                       }}
                     />
                   </ItemGrid>
+                 
                 </Grid>
               </div>
             }
           />
         </ItemGrid>
         <ItemGrid xs={12} sm={12} md={4}>
-          
-        </ItemGrid>
-      </Grid><Grid container>
-        <ItemGrid xs={12} sm={12} md={10}>
           <RegularCard
             cardTitle="Nutrient Labs"
             content={
               <div>
                 <Grid container>
-                  <ItemGrid xs={12} sm={12} md={24}>
+                  <ItemGrid xs={12} sm={12} md={10}>
                     <CustomInput
                       labelText="Glucose (mg/dL)"
                       id="glucose"
@@ -453,11 +322,9 @@ function PatientChart() {
                         disabled: false
                       }}
                     />
-                  </ItemGrid>
-                  <ItemGrid xs={12} sm={12} md={24}>
                     <CustomInput
                       labelText="Protein (g/dL)"
-                      id="proteiin"
+                      id="protein"
                       formControlProps={{
                         fullWidth: true
                       }}
@@ -466,22 +333,24 @@ function PatientChart() {
                       }}
                     />
                   </ItemGrid>
+                  
                 </Grid>
               </div>
             }
           />
         </ItemGrid>
+      </Grid>
+
+    <Grid container flexdirection = 'column'>
         <ItemGrid xs={12} sm={12} md={4}>
-          
-        </ItemGrid>
-      </Grid><Grid container>
-        <ItemGrid xs={12} sm={12} md={10}>
           <RegularCard
+          //Patient Info
             cardTitle="Lipids"
             content={
               <div>
                 <Grid container>
-                  <ItemGrid xs={12} sm={12} md={24}>
+                  <ItemGrid xs={12} sm={12} md={10}>
+                    
                     <CustomInput
                       labelText="LDL (mg/dL)"
                       id="ldl"
@@ -492,8 +361,6 @@ function PatientChart() {
                         disabled: false
                       }}
                     />
-                  </ItemGrid>
-                  <ItemGrid xs={12} sm={12} md={24}>
                     <CustomInput
                       labelText="HDL (mg/dL)"
                       id="hdl"
@@ -504,6 +371,7 @@ function PatientChart() {
                         disabled: false
                       }}
                     />
+                  
                   </ItemGrid>
                 </Grid>
               </div>
@@ -511,16 +379,12 @@ function PatientChart() {
           />
         </ItemGrid>
         <ItemGrid xs={12} sm={12} md={4}>
-          
-        </ItemGrid>
-      </Grid><Grid container>
-        <ItemGrid xs={12} sm={12} md={10}>
           <RegularCard
             cardTitle="Liver"
             content={
               <div>
                 <Grid container>
-                  <ItemGrid xs={12} sm={12} md={24}>
+                  <ItemGrid xs={12} sm={12} md={10}>
                     <CustomInput
                       labelText="Amylase (U/L)"
                       id="amylase"
@@ -531,8 +395,6 @@ function PatientChart() {
                         disabled: false
                       }}
                     />
-                  </ItemGrid>
-                  <ItemGrid xs={12} sm={12} md={24}>
                     <CustomInput
                       labelText="Lipase"
                       id="lipase"
@@ -544,25 +406,32 @@ function PatientChart() {
                       }}
                     />
                   </ItemGrid>
+                 
                 </Grid>
               </div>
             }
           />
         </ItemGrid>
         <ItemGrid xs={12} sm={12} md={4}>
-          
-        </ItemGrid>
-      </Grid><Grid container>
-        <ItemGrid xs={12} sm={12} md={10}>
           <RegularCard
-            cardTitle="Active and Inactive Medications"
+            cardTitle="Medications List"
             content={
               <div>
                 <Grid container>
-                  <ItemGrid xs={12} sm={12} md={24}>
+                  <ItemGrid xs={12} sm={12} md={10}>
                     <CustomInput
-                      labelText="Active Medication List"
-                      id="active-meds"
+                      labelText="Active Medications"
+                      id="active"
+                      formControlProps={{
+                        fullWidth: true
+                      }}
+                      inputProps={{
+                        disabled: false
+                      }}
+                    />
+                    <CustomInput
+                      labelText="Inactive Medications"
+                      id="inactive"
                       formControlProps={{
                         fullWidth: true
                       }}
@@ -571,36 +440,26 @@ function PatientChart() {
                       }}
                     />
                   </ItemGrid>
-                  <ItemGrid xs={12} sm={12} md={24}>
-                    <CustomInput
-                      labelText="Inactive Medication List"
-                      id="inactive-meds"
-                      formControlProps={{
-                        fullWidth: true
-                      }}
-                      inputProps={{
-                        disabled: false
-                      }}
-                    />
-                  </ItemGrid>
+                  
                 </Grid>
               </div>
             }
           />
         </ItemGrid>
+      </Grid>
+
+      <Grid container flexdirection = 'column'>
         <ItemGrid xs={12} sm={12} md={4}>
-          
-        </ItemGrid>
-      </Grid><Grid container>
-        <ItemGrid xs={12} sm={12} md={10}>
           <RegularCard
+          //Patient Info
             cardTitle="Microbiology"
             content={
               <div>
                 <Grid container>
-                  <ItemGrid xs={12} sm={12} md={24}>
+                  <ItemGrid xs={12} sm={12} md={10}>
+                    
                     <CustomInput
-                      labelText="source"
+                      labelText="Source"
                       id="source"
                       formControlProps={{
                         fullWidth: true
@@ -609,11 +468,9 @@ function PatientChart() {
                         disabled: false
                       }}
                     />
-                  </ItemGrid>
-                  <ItemGrid xs={12} sm={12} md={24}>
                     <CustomInput
-                      labelText="Culture Final Result"
-                      id="culture-final-result"
+                      labelText="Overall Results of Culture"
+                      id="culture-results"
                       formControlProps={{
                         fullWidth: true
                       }}
@@ -621,6 +478,7 @@ function PatientChart() {
                         disabled: false
                       }}
                     />
+                  
                   </ItemGrid>
                 </Grid>
               </div>
@@ -628,19 +486,15 @@ function PatientChart() {
           />
         </ItemGrid>
         <ItemGrid xs={12} sm={12} md={4}>
-          
-        </ItemGrid>
-      </Grid><Grid container>
-        <ItemGrid xs={12} sm={12} md={10}>
           <RegularCard
-            cardTitle="Other Factors"
+            cardTitle="Miscellanous Factors"
             content={
               <div>
                 <Grid container>
-                  <ItemGrid xs={12} sm={12} md={24}>
+                  <ItemGrid xs={12} sm={12} md={10}>
                     <CustomInput
                       labelText="Vitamin B12 (pg/mL)"
-                      id="vitamin-b12"
+                      id="b12"
                       formControlProps={{
                         fullWidth: true
                       }}
@@ -648,8 +502,6 @@ function PatientChart() {
                         disabled: false
                       }}
                     />
-                  </ItemGrid>
-                  <ItemGrid xs={12} sm={12} md={24}>
                     <CustomInput
                       labelText="Folic Acid (ng/mL)"
                       id="folic-acid"
@@ -661,25 +513,22 @@ function PatientChart() {
                       }}
                     />
                   </ItemGrid>
+                 
                 </Grid>
               </div>
             }
           />
         </ItemGrid>
         <ItemGrid xs={12} sm={12} md={4}>
-          
-        </ItemGrid>
-      </Grid><Grid container>
-        <ItemGrid xs={12} sm={12} md={10}>
           <RegularCard
-            cardTitle="progress Notes"
+            cardTitle="Patient Progress Notes"
             content={
               <div>
                 <Grid container>
-                  <ItemGrid xs={12} sm={12} md={24}>
+                  <ItemGrid xs={12} sm={12} md={10}>
                     <CustomInput
-                      labelText="Overnight Events"
-                      id="overnight-events"
+                      labelText="Observation Notes"
+                      id="observation"
                       formControlProps={{
                         fullWidth: true
                       }}
@@ -687,10 +536,8 @@ function PatientChart() {
                         disabled: false
                       }}
                     />
-                  </ItemGrid>
-                  <ItemGrid xs={12} sm={12} md={24}>
                     <CustomInput
-                      labelText="Nutrition"
+                      labelText="Nutrition Summary"
                       id="nutrition"
                       formControlProps={{
                         fullWidth: true
@@ -700,22 +547,24 @@ function PatientChart() {
                       }}
                     />
                   </ItemGrid>
+                  
                 </Grid>
               </div>
             }
           />
         </ItemGrid>
+      </Grid>
+
+      <Grid container flexdirection = 'column'>
         <ItemGrid xs={12} sm={12} md={4}>
-          
-        </ItemGrid>
-      </Grid><Grid container>
-        <ItemGrid xs={12} sm={12} md={10}>
           <RegularCard
+          //Patient Info
             cardTitle="Serum"
             content={
               <div>
                 <Grid container>
-                  <ItemGrid xs={12} sm={12} md={24}>
+                  <ItemGrid xs={12} sm={12} md={10}>
+                    
                     <CustomInput
                       labelText="Lactate"
                       id="lactate"
@@ -726,11 +575,9 @@ function PatientChart() {
                         disabled: false
                       }}
                     />
-                  </ItemGrid>
-                  <ItemGrid xs={12} sm={12} md={24}>
                     <CustomInput
                       labelText="Albumin"
-                      id="patient-condition"
+                      id="albumin"
                       formControlProps={{
                         fullWidth: true
                       }}
@@ -738,6 +585,7 @@ function PatientChart() {
                         disabled: false
                       }}
                     />
+                  
                   </ItemGrid>
                 </Grid>
               </div>
@@ -745,19 +593,25 @@ function PatientChart() {
           />
         </ItemGrid>
         <ItemGrid xs={12} sm={12} md={4}>
-          
-        </ItemGrid>
-      </Grid><Grid container>
-        <ItemGrid xs={12} sm={12} md={10}>
           <RegularCard
             cardTitle="Toxicology"
             content={
               <div>
                 <Grid container>
-                  <ItemGrid xs={12} sm={12} md={24}>
+                  <ItemGrid xs={12} sm={12} md={10}>
                     <CustomInput
-                      labelText="Alcohol"
-                      id="alcohol"
+                      labelText="Alcohol Level"
+                      id="alc"
+                      formControlProps={{
+                        fullWidth: true
+                      }}
+                      inputProps={{
+                        disabled: false
+                      }}
+                    />
+                    <CustomInput
+                      labelText="Acetaminophen Level"
+                      id="tylenol"
                       formControlProps={{
                         fullWidth: true
                       }}
@@ -766,37 +620,32 @@ function PatientChart() {
                       }}
                     />
                   </ItemGrid>
-                  <ItemGrid xs={12} sm={12} md={24}>
-                    <CustomInput
-                      labelText="Acetaminophen"
-                      id="acetaminophen"
-                      formControlProps={{
-                        fullWidth: true
-                      }}
-                      inputProps={{
-                        disabled: false
-                      }}
-                    />
-                  </ItemGrid>
+                 
                 </Grid>
               </div>
             }
           />
         </ItemGrid>
         <ItemGrid xs={12} sm={12} md={4}>
-          
-        </ItemGrid>
-      </Grid><Grid container>
-        <ItemGrid xs={12} sm={12} md={10}>
           <RegularCard
-            cardTitle="Urine"
+            cardTitle="Urine Results"
             content={
               <div>
                 <Grid container>
-                  <ItemGrid xs={12} sm={12} md={24}>
+                  <ItemGrid xs={12} sm={12} md={10}>
                     <CustomInput
-                      labelText="Red Blood Cell"
-                      id="rbc"
+                      labelText="Red Blood Cell Level"
+                      id="rbc-urine"
+                      formControlProps={{
+                        fullWidth: true
+                      }}
+                      inputProps={{
+                        disabled: false
+                      }}
+                    />
+                    <CustomInput
+                      labelText="Glucose Level"
+                      id="glucose-urine"
                       formControlProps={{
                         fullWidth: true
                       }}
@@ -805,37 +654,27 @@ function PatientChart() {
                       }}
                     />
                   </ItemGrid>
-                  <ItemGrid xs={12} sm={12} md={24}>
-                    <CustomInput
-                      labelText="Glucose In Urine"
-                      id="glucose-in-urine"
-                      formControlProps={{
-                        fullWidth: true
-                      }}
-                      inputProps={{
-                        disabled: false
-                      }}
-                    />
-                  </ItemGrid>
+                  
                 </Grid>
               </div>
             }
           />
         </ItemGrid>
+      </Grid>
+
+      <Grid container flexdirection = 'column'>
         <ItemGrid xs={12} sm={12} md={4}>
-          
-        </ItemGrid>
-      </Grid><Grid container>
-        <ItemGrid xs={12} sm={12} md={10}>
           <RegularCard
+          //Patient Info
             cardTitle="Virology"
             content={
               <div>
                 <Grid container>
-                  <ItemGrid xs={12} sm={12} md={24}>
+                  <ItemGrid xs={12} sm={12} md={10}>
+                    
                     <CustomInput
                       labelText="Source"
-                      id="source-virus"
+                      id="source-viro"
                       formControlProps={{
                         fullWidth: true
                       }}
@@ -843,11 +682,9 @@ function PatientChart() {
                         disabled: false
                       }}
                     />
-                  </ItemGrid>
-                  <ItemGrid xs={12} sm={12} md={24}>
                     <CustomInput
                       labelText="Result"
-                      id="result-virus"
+                      id="result-viro"
                       formControlProps={{
                         fullWidth: true
                       }}
@@ -855,16 +692,17 @@ function PatientChart() {
                         disabled: false
                       }}
                     />
+                  
                   </ItemGrid>
                 </Grid>
               </div>
             }
           />
         </ItemGrid>
-        <ItemGrid xs={12} sm={12} md={4}>
-          
-        </ItemGrid>
+        
       </Grid>
+
+    
     </div>
   );
 }

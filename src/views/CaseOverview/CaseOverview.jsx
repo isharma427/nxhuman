@@ -62,6 +62,13 @@ function UserProfile({ ...props }) {
                         fullWidth: true
                       }}
                     />
+                     <CustomInput
+                      labelText="Age"
+                      id="age"
+                      formControlProps={{
+                        fullWidth: true
+                      }}
+                    />
                   </ItemGrid>
               
                 </Grid>
