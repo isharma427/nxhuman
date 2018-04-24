@@ -56,8 +56,8 @@ const appRoutes = [
   },
   {
     path: "/review",
-    sidebarName: "Summary",
-    navbarName: "Summary",
+    sidebarName: "Review and Submit",
+    navbarName: "Review and Submit",
     icon: BubbleChart,
     component: Icons
   },
