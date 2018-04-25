@@ -278,10 +278,7 @@ class DialogueForm extends Component {
         this.setState({ [name]: event.target.checked });
     };
 
-    /*handleSubmit(event) {
-        console.log(this.state);
-<<<<<<< HEAD
-
+    handleSubmit(event) {
         stitchClientPromise.then(stitchClient => {
             // mongodb1 is the name of the mongodb service registered with the app.
             let db = stitchClient.service('mongodb','mongodb-atlas').db('nxhuman');
@@ -297,10 +294,6 @@ class DialogueForm extends Component {
         }).then(result => console.log('success: ', result))
             .catch(e => console.log('error: ', e));
     }
-=======
-        event.preventDefault();
-    }*/
->>>>>>> 8c8941e3d2d2f028def263e1459d477f2845e35e
 
 
     render() {
