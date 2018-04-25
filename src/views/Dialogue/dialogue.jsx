@@ -74,6 +74,11 @@ class DialogueForm extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    handleSubmit(event) {
+    alert('Saved!');
+    event.preventDefault();
+}
+
     state = {
         greeting: '',
         greetingOptional: false,
@@ -288,10 +293,10 @@ class DialogueForm extends Component {
         this.setState({ [name]: event.target.checked });
     };
 
-    handleSubmit(event) {
+    /*handleSubmit(event) {
         console.log(this.state);
         event.preventDefault();
-    }
+    }*/
 
     render() {
         const flexContainer = {
@@ -1899,7 +1904,15 @@ class DialogueForm extends Component {
                         </ListItem>
                     </List>
                 </form>
+                <Button 
+            color="primary"
+            onClick={this.handleSubmit}
+            >Save
+            <a >
+            </a>
+            </Button>
             </div>
+            
         );
     }
 }
