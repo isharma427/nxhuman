@@ -13,8 +13,15 @@ import {
 import avatar from "../../assets/img/faces/marc.jpg";
 
 
+class UserProfile extends React.Component{
 
-function UserProfile({ ...props }) {
+
+  handleSubmit(event) {
+    alert('Saved!');
+    event.preventDefault();
+  }
+
+  render() {
   return (
      
     <div>
@@ -113,8 +120,18 @@ function UserProfile({ ...props }) {
             >Next Step
             <a >
             </a>
-            </Button>}
+            </Button>
+            
+            
+            }
           />
+           <Button 
+            color="primary"
+            onClick={this.handleSubmit}
+            >Save
+            <a >
+            </a>
+            </Button> 
         </ItemGrid>
         <ItemGrid xs={12} sm={12} md={15}>
           
@@ -125,5 +142,7 @@ function UserProfile({ ...props }) {
   
   );
 }
+}
+
 
 export default UserProfile;

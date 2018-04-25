@@ -70,6 +70,11 @@ class DialogueForm extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    handleSubmit(event) {
+    alert('Saved!');
+    event.preventDefault();
+}
+
     state = {
         greeting: '',
         greetingOptional: false,
@@ -273,8 +278,9 @@ class DialogueForm extends Component {
         this.setState({ [name]: event.target.checked });
     };
 
-    handleSubmit(event) {
+    /*handleSubmit(event) {
         console.log(this.state);
+<<<<<<< HEAD
 
         stitchClientPromise.then(stitchClient => {
             // mongodb1 is the name of the mongodb service registered with the app.
@@ -291,6 +297,10 @@ class DialogueForm extends Component {
         }).then(result => console.log('success: ', result))
             .catch(e => console.log('error: ', e));
     }
+=======
+        event.preventDefault();
+    }*/
+>>>>>>> 8c8941e3d2d2f028def263e1459d477f2845e35e
 
 
     render() {
@@ -1899,7 +1909,15 @@ class DialogueForm extends Component {
                         </ListItem>
                     </List>
                 </form>
+                <Button 
+            color="primary"
+            onClick={this.handleSubmit}
+            >Save
+            <a >
+            </a>
+            </Button>
             </div>
+            
         );
     }
 }

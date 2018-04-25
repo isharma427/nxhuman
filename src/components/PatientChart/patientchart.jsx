@@ -18,7 +18,13 @@ import {
 import PropTypes from "prop-types";
 import tableStyle from "../../variables/styles/tableStyle";
 import CircularProgressbar from 'react-circular-progressbar'; 
-function PatientChart() {
+class PatientChart extends React.Component{ 
+
+   handleSubmit(event) {
+    alert('Saved!');
+    event.preventDefault();
+}
+render() {
   return (
     <div>
      
@@ -701,10 +707,22 @@ function PatientChart() {
         </ItemGrid>
         
       </Grid>
-
+      <Button 
+            color="primary"
+            onClick={this.handleSubmit}
+            >Save
+            <a >
+            </a>
+            </Button> 
+             
+            
+         
+           
+        
     
     </div>
   );
+}
 }
 
 export default PatientChart;
