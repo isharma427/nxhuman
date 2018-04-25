@@ -279,6 +279,7 @@ class DialogueForm extends Component {
     };
 
     handleSubmit(event) {
+
         stitchClientPromise.then(stitchClient => {
             // mongodb1 is the name of the mongodb service registered with the app.
             let db = stitchClient.service('mongodb','mongodb-atlas').db('nxhuman');
@@ -294,7 +295,6 @@ class DialogueForm extends Component {
         }).then(result => console.log('success: ', result))
             .catch(e => console.log('error: ', e));
     }
-
 
     render() {
         const flexContainer = {
