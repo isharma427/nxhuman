@@ -301,6 +301,13 @@ class DialogueForm extends Component {
             width: '100%'
         };
 
+        const greetingContainer = {
+            display: 'flex',
+            flexDirection: 'row',
+            padding: 0,
+            width: '50%'
+        };
+
         const problemFlexContainer = {
             display: 'flex',
             flexDirection: 'row',
@@ -360,10 +367,10 @@ class DialogueForm extends Component {
             <div style={{overflowX: 'auto'}}>
                 <form onSubmit={this.handleSubmit}>
                     <List style={flexContainer}>
-                        <ListItem>
+                        <ListItem style={greetingContainer}>
                             <Card style={flexItem}>
                                 <FormControl fullWidth={true}>
-                                    <InputLabel>Hello! I'm [name].</InputLabel>
+                                    <InputLabel>Greeting and Introduction</InputLabel>
                                     <Input id="greeting"
                                            value={this.state.greeting}
                                            onChange={this.handleChange('greeting')} />
@@ -451,101 +458,11 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                             </Card>
-                            <Card style={flexItem}>
-                                <FormControl fullWidth={true}>
-                                    <InputLabel>Nice to see you! Let's begin.</InputLabel>
-                                    <Input id="greeting2"
-                                           value={this.state.greeting2}
-                                           onChange={this.handleChange('greeting2')} />
-                                </FormControl>
-                                <div>
-                                    Optional:
-                                    <Checkbox
-                                        checked={this.state.greetingOptional2}
-                                        onChange={this.handleChangeCheckbox('greetingOptional2')}
-                                        value="greetingOptional2"
-                                    />
-                                </div>
-                            </Card>
-                            <Card style={flexItem}>
-                                <FormControl fullWidth={true}>
-                                    <InputLabel>Patient Response</InputLabel>
-                                    <Input id="posPatient2"
-                                           value={this.state.posPatient2}
-                                           onChange={this.handleChange('posPatient2')} />
-                                </FormControl>
-                                <FormControl>
-                                    <Select
-                                        value="positive"
-                                        onChange={this.handleChange('emotionsPos2')}
-                                    >
-                                        <MenuItem value="positive">Positive</MenuItem>
-                                        <MenuItem value="neutral">Neutral</MenuItem>
-                                        <MenuItem value="negative">Negative</MenuItem>
-                                    </Select>
-                                </FormControl>
-                                <div>
-                                    Optional:
-                                    <Checkbox
-                                        checked={this.state.posPatientOptional2}
-                                        onChange={this.handleChangeCheckbox('posPatientOptional2')}
-                                        value="posPatientOptional2"
-                                    />
-                                </div>
-                                <FormControl fullWidth={true}>
-                                    <InputLabel>Patient Response</InputLabel>
-                                    <Input id="neutPatient2"
-                                           value={this.state.neutPatient2}
-                                           onChange={this.handleChange('neutPatient2')} />
-                                </FormControl>
-                                <FormControl>
-                                    <Select
-                                        value="neutral"
-                                        onChange={this.handleChange('emotionsNeut2')}
-                                    >
-                                        <MenuItem value="positive">Positive</MenuItem>
-                                        <MenuItem value="neutral">Neutral</MenuItem>
-                                        <MenuItem value="negative">Negative</MenuItem>
-                                    </Select>
-                                </FormControl>
-                                <div>
-                                    Optional:
-                                    <Checkbox
-                                        checked={this.state.neutPatientOptional2}
-                                        onChange={this.handleChangeCheckbox('neutPatientOptional2')}
-                                        value="neutPatientOptional2"
-                                    />
-                                </div>
-                                <FormControl fullWidth={true}>
-                                    <InputLabel>Patient Response</InputLabel>
-                                    <Input id="negPatient2"
-                                           value={this.state.negPatient2}
-                                           onChange={this.handleChange('negPatient2')} />
-                                </FormControl>
-                                <FormControl>
-                                    <Select
-                                        value="negative"
-                                        onChange={this.handleChange('emotionsNeg2')}
-                                    >
-                                        <MenuItem value="positive">Positive</MenuItem>
-                                        <MenuItem value="neutral">Neutral</MenuItem>
-                                        <MenuItem value="negative">Negative</MenuItem>
-                                    </Select>
-                                </FormControl>
-                                <div>
-                                    Optional:
-                                    <Checkbox
-                                        checked={this.state.negPatientOptional2}
-                                        onChange={this.handleChangeCheckbox('negPatientOptional2')}
-                                        value="negPatientOptional2"
-                                    />
-                                </div>
-                            </Card>
                         </ListItem>
                         <ListItem>
                             <Card style={flexItem}>
                                 <FormControl fullWidth={true}>
-                                    <InputLabel>Any chart updates?</InputLabel>
+                                    <InputLabel>Check for Chart Updates</InputLabel>
                                     <Input id="chart"
                                            value={this.state.chart}
                                            onChange={this.handleChange('chart')} />
@@ -635,7 +552,7 @@ class DialogueForm extends Component {
                             </Card>
                             <Card style={flexItem}>
                                 <FormControl fullWidth={true}>
-                                    <InputLabel>Can you elaborate?</InputLabel>
+                                    <InputLabel>Follow-Up Questions</InputLabel>
                                     <Input id="chart2"
                                            value={this.state.chart2}
                                            onChange={this.handleChange('chart2')} />
@@ -649,7 +566,7 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                                 <FormControl fullWidth={true}>
-                                    <InputLabel>Good to hear!</InputLabel>
+                                    <InputLabel>Follow-Up Response</InputLabel>
                                     <Input id="chart3"
                                            value={this.state.chart3}
                                            onChange={this.handleChange('chart3')} />
@@ -813,7 +730,7 @@ class DialogueForm extends Component {
                         <ListItem style={problemFlexContainer}>
                             <Card style={problemItem}>
                                 <FormControl fullWidth={true}>
-                                    <InputLabel>What brings you in today?</InputLabel>
+                                    <InputLabel>Ask for Reason for Visit</InputLabel>
                                     <Input id="problem"
                                            value={this.state.problem}
                                            onChange={this.handleChange('problem')} />
@@ -903,7 +820,7 @@ class DialogueForm extends Component {
                             </Card>
                             <Card style={problemItem}>
                                 <FormControl fullWidth={true}>
-                                    <InputLabel>Follow-up questions.</InputLabel>
+                                    <InputLabel>Follow-Up Questions</InputLabel>
                                     <Input id="problem2"
                                            value={this.state.problem2}
                                            onChange={this.handleChange('problem2')} />
@@ -917,7 +834,7 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                                 <FormControl fullWidth={true}>
-                                    <InputLabel>Do you mind if I take a look?</InputLabel>
+                                    <InputLabel>Lead into Physical Examination</InputLabel>
                                     <Input id="problem3"
                                            value={this.state.problem3}
                                            onChange={this.handleChange('problem3')} />
@@ -1079,7 +996,7 @@ class DialogueForm extends Component {
                             </Card>
                             <Card style={problemItem}>
                                 <FormControl fullWidth={true}>
-                                    <InputLabel>Additional concerns?</InputLabel>
+                                    <InputLabel>Ask for Additional Concerns</InputLabel>
                                     <Input id="problem4"
                                            value={this.state.problem4}
                                            onChange={this.handleChange('problem4')} />
@@ -1171,7 +1088,7 @@ class DialogueForm extends Component {
                         <ListItem>
                             <Card style={flexItem}>
                                 <FormControl fullWidth={true}>
-                                    <InputLabel>Do you have a family history of [disease]?</InputLabel>
+                                    <InputLabel>Update Family History of [Disease]</InputLabel>
                                     <Input id="history"
                                            value={this.state.history}
                                            onChange={this.handleChange('history')} />
@@ -1261,7 +1178,7 @@ class DialogueForm extends Component {
                             </Card>
                             <Card style={flexItem}>
                                 <FormControl fullWidth={true}>
-                                    <InputLabel>Tell me more.</InputLabel>
+                                    <InputLabel>Follow-Up Questions</InputLabel>
                                     <Input id="history2"
                                            value={this.state.history2}
                                            onChange={this.handleChange('history2')} />
@@ -1275,7 +1192,7 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                                 <FormControl fullWidth={true}>
-                                    <InputLabel>Good to know.</InputLabel>
+                                    <InputLabel>Follow-Up Response</InputLabel>
                                     <Input id="history3"
                                            value={this.state.history3}
                                            onChange={this.handleChange('history3')} />
@@ -1439,7 +1356,7 @@ class DialogueForm extends Component {
                         <ListItem style={diagnosisFlexContainer}>
                             <Card style={diagnosisItem}>
                                 <FormControl fullWidth={true}>
-                                    <InputLabel>Your course of treatment is ...</InputLabel>
+                                    <InputLabel>Diagnosis and Treatment</InputLabel>
                                     <Input id="diagnosis"
                                            value={this.state.diagnosis}
                                            onChange={this.handleChange('diagnosis')} />
@@ -1529,7 +1446,7 @@ class DialogueForm extends Component {
                             </Card>
                             <Card style={diagnosisItem}>
                                 <FormControl fullWidth={true}>
-                                    <InputLabel>Any additional questions?</InputLabel>
+                                    <InputLabel>Ask for Patient Questions</InputLabel>
                                     <Input id="diagnosis2"
                                            value={this.state.diagnosis2}
                                            onChange={this.handleChange('diagnosis2')} />
@@ -1619,7 +1536,7 @@ class DialogueForm extends Component {
                             </Card>
                             <Card style={diagnosisItem}>
                                 <FormControl fullWidth={true}>
-                                    <InputLabel>Follow-up answer.</InputLabel>
+                                    <InputLabel>Follow-Up Response</InputLabel>
                                     <Input id="diagnosis3"
                                            value={this.state.diagnosis3}
                                            onChange={this.handleChange('diagnosis3')} />
@@ -1633,7 +1550,7 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                                 <FormControl fullWidth={true}>
-                                    <InputLabel>Great!</InputLabel>
+                                    <InputLabel>Follow-Up Response</InputLabel>
                                     <Input id="diagnosis4"
                                            value={this.state.diagnosis4}
                                            onChange={this.handleChange('diagnosis4')} />
@@ -1795,7 +1712,7 @@ class DialogueForm extends Component {
                             </Card>
                             <Card style={diagnosisItem}>
                                 <FormControl fullWidth={true}>
-                                    <InputLabel>Additional instructions.</InputLabel>
+                                    <InputLabel>Additional Instructions</InputLabel>
                                     <Input id="diagnosis5"
                                            value={this.state.diagnosis5}
                                            onChange={this.handleChange('diagnosis5')} />
@@ -1885,7 +1802,7 @@ class DialogueForm extends Component {
                             </Card>
                             <Card style={diagnosisItem}>
                                 <FormControl fullWidth={true}>
-                                    <InputLabel>Take care!</InputLabel>
+                                    <InputLabel>Goodbye</InputLabel>
                                     <Input id="diagnosis6"
                                            value={this.state.diagnosis6}
                                            onChange={this.handleChange('diagnosis6')} />
