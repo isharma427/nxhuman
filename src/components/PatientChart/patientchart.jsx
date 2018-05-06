@@ -34,8 +34,13 @@ class PatientChart extends React.Component{
 render() {
   return (
     <div>
-     
-      <Grid container flexdirection = 'column'>
+     <RegularCard
+     cardTitle="Patient Chart Information"
+     cardSubtitle="Please Fill Out the Following Information and Click Save. Fields are Optional! Click Next Step when Finished."
+     ></RegularCard> 
+      <Grid container flexdirection = 'column'
+            
+                  >
         <ItemGrid xs={12} sm={12} md={4}>
           <RegularCard
           //Patient Info

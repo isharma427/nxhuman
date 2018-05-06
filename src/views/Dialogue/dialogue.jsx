@@ -38,8 +38,8 @@ function PageHeader({ ...props }) {
             />
 
             <RegularCard
-                cardTitle={"Student Dialogue"}
-                cardSubtitle={"Use the right arrow key to see more!"}
+                cardTitle={"Student and Patient Dialogue"}
+                cardSubtitle={"Use the right arrow key to see more! Remember to Save Periodically and Click Next Step When Finished!"}
             />
         </div>
     );

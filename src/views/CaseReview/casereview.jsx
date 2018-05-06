@@ -88,12 +88,10 @@ handleSubmit2(event) {
         <RegularCard
           plainCard
           cardTitle="Review and Submit"
-          cardSubtitle={
-            <P>
-              {" "}
-             
-            </P>
-          }
+        
+          cardSubtitle= "Please click final save to ensure all data has been associated with your Case ID and saved to your email. Then click submit to email your information to nxHuman!"
+           
+          
           content={
             <div>
             {/*{<Button 

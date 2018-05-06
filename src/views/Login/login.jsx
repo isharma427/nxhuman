@@ -83,7 +83,7 @@ handleSubmit() {
         <ItemGrid xs={12} sm={12} md={8}>
           <RegularCard
             cardTitle="Login Portal"
-            cardSubtitle="Please Click Log In, then Click Next Step!"
+            cardSubtitle="Please Click Log In, which will Log you into google. Afterwards, Click Next Step!"
             content={
               <div>
                 <Grid container>

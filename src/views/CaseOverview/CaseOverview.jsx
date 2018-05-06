@@ -34,7 +34,7 @@ class UserProfile extends React.Component{
         <ItemGrid xs={12} sm={12} md={4}>
           <RegularCard
             cardTitle="Overall Patient Information"
-            cardSubtitle="Please Fill Out!"
+            cardSubtitle="Please Fill Out the Following Information and Click Next Step to Continue. All are mandatory!"
             content={
               <div>
                 <Grid container>
