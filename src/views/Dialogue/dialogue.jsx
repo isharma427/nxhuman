@@ -44,7 +44,7 @@ function PageHeader({ ...props }) {
 
             <RegularCard
                 cardTitle={"Student and Patient Dialogue"}
-                cardSubtitle={"Use the Right Arrow Key to See More! Click Next Step when Finished. (NOTE: ***REQUIRED Fields Cannot be Empty***)"}
+                cardSubtitle={"Use the Right Arrow Key to See More! Remember to Save Periodically and Click Next Step when Finished. (NOTE: ***Required Fields Cannot be Empty***)"}
             />
         </div>
     );
