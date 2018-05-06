@@ -263,7 +263,10 @@ class DialogueForm extends Component {
         neutDiagnosisOptional6: false,
         negDiagnosis6: '',
         emotionsNegDiagnosis6: '',
-        negDiagnosisOptional6: false
+        negDiagnosisOptional6: false,
+
+        required1error: '',
+        required2error: ''
 
     };
 
@@ -721,8 +724,8 @@ class DialogueForm extends Component {
                         <ListItem style={problemFlexContainer}>
                             <Card style={problemItem}>
                                 <FormControl fullWidth={true}>
-                                    <InputLabel>Ask for Reason for Visit</InputLabel>
-                                    <Input id="problem"
+                                    <InputLabel>Ask about Problem</InputLabel>
+                                    <Input id="problem" className="required1"
                                            value={this.state.problem}
                                            onChange={this.handleChange('problem')} />
                                 </FormControl>
@@ -738,7 +741,7 @@ class DialogueForm extends Component {
                             <Card style={problemItem}>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>Patient Response</InputLabel>
-                                    <Input id="posProblem"
+                                    <Input id="posProblem" className="required1"
                                            value={this.state.posProblem}
                                            onChange={this.handleChange('posProblem')} />
                                 </FormControl>
@@ -762,7 +765,7 @@ class DialogueForm extends Component {
                                 </div>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>Patient Response</InputLabel>
-                                    <Input id="neutProblem"
+                                    <Input id="neutProblem" className="required1"
                                            value={this.state.neutProblem}
                                            onChange={this.handleChange('neutProblem')} />
                                 </FormControl>
@@ -786,7 +789,7 @@ class DialogueForm extends Component {
                                 </div>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>Patient Response</InputLabel>
-                                    <Input id="negProblem"
+                                    <Input id="negProblem" className="required1"
                                            value={this.state.negProblem}
                                            onChange={this.handleChange('negProblem')} />
                                 </FormControl>
@@ -1348,7 +1351,7 @@ class DialogueForm extends Component {
                             <Card style={diagnosisItem}>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>Diagnosis and Treatment</InputLabel>
-                                    <Input id="diagnosis"
+                                    <Input id="diagnosis" className="required2"
                                            value={this.state.diagnosis}
                                            onChange={this.handleChange('diagnosis')} />
                                 </FormControl>
@@ -1364,7 +1367,7 @@ class DialogueForm extends Component {
                             <Card style={diagnosisItem}>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>Patient Response</InputLabel>
-                                    <Input id="posDiagnosis"
+                                    <Input id="posDiagnosis" className="required2"
                                            value={this.state.posDiagnosis}
                                            onChange={this.handleChange('posDiagnosis')} />
                                 </FormControl>
@@ -1388,7 +1391,7 @@ class DialogueForm extends Component {
                                 </div>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>Patient Response</InputLabel>
-                                    <Input id="neutDiagnosis"
+                                    <Input id="neutDiagnosis" className="required2"
                                            value={this.state.neutDiagnosis}
                                            onChange={this.handleChange('neutDiagnosis')} />
                                 </FormControl>
@@ -1412,7 +1415,7 @@ class DialogueForm extends Component {
                                 </div>
                                 <FormControl fullWidth={true}>
                                     <InputLabel>Patient Response</InputLabel>
-                                    <Input id="negDiagnosis"
+                                    <Input id="negDiagnosis" className="required2"
                                            value={this.state.negDiagnosis}
                                            onChange={this.handleChange('negDiagnosis')} />
                                 </FormControl>
