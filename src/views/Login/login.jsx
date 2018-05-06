@@ -56,13 +56,20 @@ var AuthControls = class extends React.Component {
 }
 
 
+
+
   //stitchClientPromise.then(stichClient => stichClient.authenticate("google"))
   
 //}
   
+class Login extends React.Component {
 
-function Login({ ...props }) {
- 
+handleSubmit() {
+  alert('Logged In Successfully!')
+}
+
+
+ render () {
   return (
     
     <div>
@@ -76,7 +83,7 @@ function Login({ ...props }) {
         <ItemGrid xs={12} sm={12} md={8}>
           <RegularCard
             cardTitle="Login Portal"
-            cardSubtitle="Please Log In to Access the Case Authoring Tool"
+            cardSubtitle="Please Click Log In, then Click Next Step!"
             content={
               <div>
                 <Grid container>
@@ -85,7 +92,7 @@ function Login({ ...props }) {
            
                     <button 
                     //color="primary"
-                    onClick = {() =>   stitchClientPromise.then(stichClient => stichClient.authenticate("google")).then(console.log("success"))}
+                    onClick = {() =>   stitchClientPromise.then(stichClient => stichClient.authenticate("google"))}
                     >Login With Google!
                     </button>
                     
@@ -94,7 +101,7 @@ function Login({ ...props }) {
                     ?<div>
                       Success
                       </div>
-                    :null}
+                    :this.handleSubmit}
                   
                   
               
@@ -105,6 +112,7 @@ function Login({ ...props }) {
             }
             footer={<Button 
             color="primary"
+            onClick = {this.handleSubmit}
             href="/dashboard">Next Step
             </Button>}
           />
@@ -119,6 +127,7 @@ function Login({ ...props }) {
   
   );
 
+}
 }
 
 

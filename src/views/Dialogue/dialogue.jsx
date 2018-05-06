@@ -70,10 +70,7 @@ class DialogueForm extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleSubmit(event) {
-    alert('Saved!');
-    event.preventDefault();
-}
+    
 
     state = {
         greeting: '',
@@ -279,6 +276,7 @@ class DialogueForm extends Component {
     };
 
     handleSubmit(event) {
+        alert('Dialogue Information Successfully Stored and Associated with Your Case ID! Remember to Click Next Step When You are done');
 
         stitchClientPromise.then(stitchClient => {
             // mongodb1 is the name of the mongodb service registered with the app.

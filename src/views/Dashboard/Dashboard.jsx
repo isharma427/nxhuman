@@ -69,6 +69,8 @@ stitchClientPromise.then(stitchClient => {
     );
   }).then(result => console.log('success: ', result))
     .catch(e => console.log('error: ', e));
+    
+    
 }
 
 class Dashboard extends React.Component {
@@ -86,7 +88,8 @@ class Dashboard extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
+    alert('Please click next step! Case ID Successfully Created and Associated With Email Address: ' + this.state.value);
+    window.location='/caseoverview'
     event.preventDefault();
   }
 
@@ -111,12 +114,12 @@ class Dashboard extends React.Component {
             cardSubtitle="Create a Name for your Case"
             content={
               <ItemGrid xs={12} sm={12} md={5}>
-                      <form onSubmit={this.handleSubmit}>
+                      <form>
         <label>
           Name:
           <input type="text" value={this.state.value} onChange={this.handleChange} />
         </label>
-        <input type="submit" value="Submit" onClick = {addItem(this.state.text)} />
+        
       </form>
                       
                       
@@ -124,10 +127,14 @@ class Dashboard extends React.Component {
           } 
              />
           </Grid>   
-            {<Button 
+            {<Button
+            
+            
+            href="/caseoverview"
             onClick = {addItem(this.state.text)}
+            onClick = {this.handleSubmit}
             color="primary"
-            href="/caseoverview">Next Step
+            >Next Step
             
             </Button>}
             
@@ -136,10 +143,6 @@ class Dashboard extends React.Component {
     );  
   }  
 }
-
- 
-
- 
 
 Dashboard.propTypes = {
   classes: PropTypes.object.isRequired

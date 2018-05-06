@@ -17,8 +17,8 @@ class UserProfile extends React.Component{
 
 
   handleSubmit(event) {
-    alert('Saved!');
-    event.preventDefault();
+    alert('Information Stored and Associated With Case ID');
+    
   }
 
   render() {
@@ -117,6 +117,7 @@ class UserProfile extends React.Component{
             footer={<Button 
             color="primary"
             href="/patientchart"
+            onClick = {this.handleSubmit}
             >Next Step
             <a >
             </a>
@@ -125,13 +126,7 @@ class UserProfile extends React.Component{
             
             }
           />
-           <Button 
-            color="primary"
-            onClick={this.handleSubmit}
-            >Save
-            <a >
-            </a>
-            </Button> 
+           
         </ItemGrid>
         <ItemGrid xs={12} sm={12} md={15}>
           

@@ -29,6 +29,7 @@ stitchClientPromise.then(stitchClient => stitchClient.login())
   .catch(e => console.log('error: ', e));
 
 function addItem(item) {
+  
 stitchClientPromise.then(stitchClient => {
     // mongodb1 is the name of the mongodb service registered with the app.
     let db = stitchClient.service('mongodb','mongodb-atlas').db('nxhuman');
@@ -59,8 +60,19 @@ class Review extends React.Component {
     addItem(this.state.value);
   } 
 
+  handleEmail() {
+    this.send('pharmacy@unc.edu')
+  }
+
+handleSubmit2(event) {
+    alert('Your Information was Completely Saved! Remember to Click Submit Your Case' );
+
+    event.preventDefault();
+  }
+
   handleSubmit(event) {
-    alert('Your Case Was Submitted: ' + this.state.value + "!  "+ "Thank you!");
+    alert('Your Case Was Emailed to NXHUMAN with your Case ID!' );
+    window.location = '/login'
     event.preventDefault();
   }
   render () {
@@ -84,7 +96,7 @@ class Review extends React.Component {
           }
           content={
             <div>
-            {<Button 
+            {/*{<Button 
             //onClick = {addItem(this.state.text)}
             color="primary"
             href="/caseoverview">Review/Edit Case Overview
@@ -100,14 +112,17 @@ class Review extends React.Component {
             //onClick = {addItem(this.state.text)}
             color="primary"
             href="/dialogue">Review/Edit Dialogue
-            </Button>}
-             
+            </Button>}*/}
+
+            <form onSubmit={this.handleSubmit2}>
+            
+            <input type="submit" value="Final Save of Components!" onClick = {addItem(this.state.text)} />
+            </form>
+
             <form onSubmit={this.handleSubmit}>
-            <label>
-            Sign Your Case and Confirm Completion
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-            </label>
-            <input type="submit" value="Submit Your Case" onClick = {addItem(this.state.text)} />
+            
+            <input type="submit" value="Submit Your Case" onClick = {this.handleSubmit} />
+            
             </form>
 
             </div>
