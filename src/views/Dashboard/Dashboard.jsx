@@ -88,7 +88,7 @@ class Dashboard extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('Please click next step! Case ID Successfully Created and Associated With Email Address: ' + this.state.value);
+    alert('Case ID Successfully Created and Associated With Email Address: ' + this.state.value);
     window.location='/caseoverview'
     event.preventDefault();
   }

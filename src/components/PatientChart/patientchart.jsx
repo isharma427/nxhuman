@@ -21,7 +21,7 @@ import CircularProgressbar from 'react-circular-progressbar';
 class PatientChart extends React.Component{ 
 
    handleSubmit(event) {
-    alert('Patient Chart Information Successfully Stored and Associated with Your Case ID! Remember to Click Next Step When You are done');
+    alert('Patient Chart Information Successfully Stored and Associated with Your Case ID! Remember to Click Next Step When You are Done');
     event.preventDefault();
 }
 

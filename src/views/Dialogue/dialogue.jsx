@@ -44,7 +44,7 @@ function PageHeader({ ...props }) {
 
             <RegularCard
                 cardTitle={"Student and Patient Dialogue"}
-                cardSubtitle={"Use the Right Arrow Key to See More! Remember to Save Periodically and Click Next Step when Finished. (NOTE: ***Required Fields Cannot be Empty***)"}
+                cardSubtitle={"Use the Right Arrow Key to See More! Remember to Save Periodically and Click Next Step when Finished. (***Marked Fields are Required***)"}
             />
         </div>
     );
@@ -283,11 +283,11 @@ class DialogueForm extends Component {
 
     handleSubmit(event) {
         if (!this.isValidForm()) {
-            alert('Please fill out the required fields.')
+            alert('Unable to Save. Required Fields Cannot Be Empty.')
             return;
         }
 
-        alert('Dialogue Information Successfully Stored and Associated with Your Case ID! Remember to Click Next Step When You are done');
+        alert('Dialogue Information Successfully Stored and Associated with Your Case ID! Remember to Click Next Step When You are Done');
 
         stitchClientPromise.then(stitchClient => {
             // mongodb1 is the name of the mongodb service registered with the app.
@@ -312,13 +312,13 @@ class DialogueForm extends Component {
         let valid1 = this.state.problem && this.state.posProblem && this.state.neutProblem && this.state.negProblem;
         let valid2 = this.state.diagnosis && this.state.posDiagnosis && this.state.neutDiagnosis && this.state.negDiagnosis;
         if (!valid1) {
-            this.setState({required1error: 'Please fill in this field.'});
+            this.setState({required1error: 'Required Field'});
         }
         else {
             this.setState({required1error: ''});
         }
         if (!valid2) {
-            this.setState({required2error: 'Please fill in this field.'});
+            this.setState({required2error: 'Required Field'});
         }
         else {
             this.setState({required2error: ''});
