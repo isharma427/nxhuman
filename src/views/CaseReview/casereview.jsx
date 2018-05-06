@@ -61,7 +61,7 @@ class Review extends React.Component {
   } 
 
   handleEmail() {
-    this.send('pharmacy@unc.edu')
+    this.send('nxhuman@unc.edu')
   }
 
 handleSubmit2(event) {
