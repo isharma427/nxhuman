@@ -107,11 +107,11 @@ class Dashboard extends React.Component {
         <Grid container> 
             <RegularCard
               cardTitle="Welcome to nXHuman Case Authoring Tool"
-              cardSubtitle="nXHuman Case Authoring Tool allows instructors to design cases for their students to assess patient interaction. Enter a Case ID to Get Started"
+              cardSubtitle="nXHuman Case Authoring Tool Allows Instructors to Design Cases for their Students to Assess Patient Interaction. Enter a Case ID to Get Started."
             />
             <RegularCard
             cardTitle="CaseID"
-            cardSubtitle="Create a Name for your Case and Click Next Step to Continue"
+            cardSubtitle="Create a Name for your Case and Click Next Step to Continue."
             content={
               <ItemGrid xs={12} sm={12} md={5}>
                       <form>
