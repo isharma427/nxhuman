@@ -43,13 +43,8 @@ function PageHeader({ ...props }) {
             />
 
             <RegularCard
-<<<<<<< HEAD
                 cardTitle={"Student and Patient Dialogue"}
-                cardSubtitle={"Use the right arrow key to see more! Remember to Save Periodically and Click Next Step When Finished!"}
-=======
-                cardTitle={"Student Dialogue"}
-                cardSubtitle={"Use the right arrow key to see more! (NOTE: ***These fields are REQUIRED and cannot be empty***)"}
->>>>>>> newbranch
+                cardSubtitle={"Use the right arrow key to see more! Remember to Save Periodically and Click Next Step When Finished! (NOTE: ***These fields are REQUIRED and cannot be empty***)"}
             />
         </div>
     );
