@@ -15,8 +15,6 @@ function Footer({ ...props }) {
           
         <div className={classes.left}>
           
-       
-          
           <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
               <a href="caseoverview" className={classes.block}>
