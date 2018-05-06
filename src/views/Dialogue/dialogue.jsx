@@ -3,6 +3,7 @@ import { withStyles, Grid, GridList, ListItem, List, Card, FormControl, InputLab
 import { Progress } from 'react-sweet-progress';
 import "react-sweet-progress/lib/style.css";
 import { StitchClientFactory } from 'mongodb-stitch';
+import $ from 'jquery';
 import {
     RegularCard,
     Button,
@@ -29,6 +30,10 @@ const style = {
     }
 };
 
+const errorColor = {
+    color: '#f44336'
+}
+
 function PageHeader({ ...props }) {
     return (
         <div>
@@ -39,7 +44,7 @@ function PageHeader({ ...props }) {
 
             <RegularCard
                 cardTitle={"Student Dialogue"}
-                cardSubtitle={"Use the right arrow key to see more!"}
+                cardSubtitle={"Use the right arrow key to see more! (NOTE: ***These fields are REQUIRED and cannot be empty***)"}
             />
         </div>
     );
@@ -69,8 +74,6 @@ class DialogueForm extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
-    
 
     state = {
         greeting: '',
@@ -279,6 +282,11 @@ class DialogueForm extends Component {
     };
 
     handleSubmit(event) {
+        if (!this.isValidForm()) {
+            alert('Please fill out the required fields.')
+            return;
+        }
+
         alert('Dialogue Information Successfully Stored and Associated with Your Case ID! Remember to Click Next Step When You are done');
 
         stitchClientPromise.then(stitchClient => {
@@ -289,12 +297,33 @@ class DialogueForm extends Component {
             const userId = stitchClient.authedId();
             return db.collection('dialogue').updateOne(
 
-                { owner_id: userId, dialogue: this.state }
+                {
+                    owner_id: userId,
+                    dialogue: this.state
+                }
 
 
             );
         }).then(result => console.log('success: ', result))
             .catch(e => console.log('error: ', e));
+    }
+
+    isValidForm = () => {
+        let valid1 = this.state.problem && this.state.posProblem && this.state.neutProblem && this.state.negProblem;
+        let valid2 = this.state.diagnosis && this.state.posDiagnosis && this.state.neutDiagnosis && this.state.negDiagnosis;
+        if (!valid1) {
+            this.setState({required1error: 'Please fill in this field.'});
+        }
+        else {
+            this.setState({required1error: ''});
+        }
+        if (!valid2) {
+            this.setState({required2error: 'Please fill in this field.'});
+        }
+        else {
+            this.setState({required2error: ''});
+        }
+        return valid1 && valid2;
     }
 
     render() {
@@ -329,7 +358,7 @@ class DialogueForm extends Component {
 
         const flexItem = {
             width: 1000,
-            height: 850,
+            height: 900,
             alignItems: 'center',
             justifyContent: 'center',
             display: 'flex',
@@ -339,7 +368,7 @@ class DialogueForm extends Component {
 
         const problemItem = {
             width: 1500,
-            height: 850,
+            height: 900,
             alignItems: 'center',
             justifyContent: 'center',
             display: 'flex',
@@ -349,7 +378,7 @@ class DialogueForm extends Component {
 
         const diagnosisItem = {
             width: 2500,
-            height: 850,
+            height: 900,
             alignItems: 'center',
             justifyContent: 'center',
             display: 'flex',
@@ -724,10 +753,11 @@ class DialogueForm extends Component {
                         <ListItem style={problemFlexContainer}>
                             <Card style={problemItem}>
                                 <FormControl fullWidth={true}>
-                                    <InputLabel>Ask about Problem</InputLabel>
-                                    <Input id="problem" className="required1"
+                                    <InputLabel>***Ask about Problem***</InputLabel>
+                                    <Input id="problem"
                                            value={this.state.problem}
                                            onChange={this.handleChange('problem')} />
+                                    <strong style={errorColor}>{this.state.required1error}</strong>
                                 </FormControl>
                                 <div>
                                     Optional:
@@ -740,10 +770,12 @@ class DialogueForm extends Component {
                             </Card>
                             <Card style={problemItem}>
                                 <FormControl fullWidth={true}>
-                                    <InputLabel>Patient Response</InputLabel>
-                                    <Input id="posProblem" className="required1"
+                                    <InputLabel>***Patient Response***</InputLabel>
+                                    <Input id="posProblem"
                                            value={this.state.posProblem}
-                                           onChange={this.handleChange('posProblem')} />
+                                           onChange={this.handleChange('posProblem')}
+                                           />
+                                    <strong style={errorColor}>{this.state.required1error}</strong>
                                 </FormControl>
                                 <FormControl>
                                     <Select
@@ -764,10 +796,12 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                                 <FormControl fullWidth={true}>
-                                    <InputLabel>Patient Response</InputLabel>
-                                    <Input id="neutProblem" className="required1"
+                                    <InputLabel>***Patient Response***</InputLabel>
+                                    <Input id="neutProblem"
                                            value={this.state.neutProblem}
-                                           onChange={this.handleChange('neutProblem')} />
+                                           onChange={this.handleChange('neutProblem')}
+                                    />
+                                    <strong style={errorColor}>{this.state.required1error}</strong>
                                 </FormControl>
                                 <FormControl>
                                     <Select
@@ -788,10 +822,12 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                                 <FormControl fullWidth={true}>
-                                    <InputLabel>Patient Response</InputLabel>
-                                    <Input id="negProblem" className="required1"
+                                    <InputLabel>***Patient Response***</InputLabel>
+                                    <Input id="negProblem"
                                            value={this.state.negProblem}
-                                           onChange={this.handleChange('negProblem')} />
+                                           onChange={this.handleChange('negProblem')}
+                                    />
+                                    <strong style={errorColor}>{this.state.required1error}</strong>
                                 </FormControl>
                                 <FormControl>
                                     <Select
@@ -1350,10 +1386,11 @@ class DialogueForm extends Component {
                         <ListItem style={diagnosisFlexContainer}>
                             <Card style={diagnosisItem}>
                                 <FormControl fullWidth={true}>
-                                    <InputLabel>Diagnosis and Treatment</InputLabel>
-                                    <Input id="diagnosis" className="required2"
+                                    <InputLabel>***Diagnosis and Treatment***</InputLabel>
+                                    <Input id="diagnosis"
                                            value={this.state.diagnosis}
                                            onChange={this.handleChange('diagnosis')} />
+                                    <strong style={errorColor}>{this.state.required2error}</strong>
                                 </FormControl>
                                 <div>
                                     Optional:
@@ -1366,10 +1403,11 @@ class DialogueForm extends Component {
                             </Card>
                             <Card style={diagnosisItem}>
                                 <FormControl fullWidth={true}>
-                                    <InputLabel>Patient Response</InputLabel>
-                                    <Input id="posDiagnosis" className="required2"
+                                    <InputLabel>***Patient Response***</InputLabel>
+                                    <Input id="posDiagnosis"
                                            value={this.state.posDiagnosis}
                                            onChange={this.handleChange('posDiagnosis')} />
+                                    <strong style={errorColor}>{this.state.required2error}</strong>
                                 </FormControl>
                                 <FormControl>
                                     <Select
@@ -1390,10 +1428,11 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                                 <FormControl fullWidth={true}>
-                                    <InputLabel>Patient Response</InputLabel>
-                                    <Input id="neutDiagnosis" className="required2"
+                                    <InputLabel>***Patient Response***</InputLabel>
+                                    <Input id="neutDiagnosis"
                                            value={this.state.neutDiagnosis}
                                            onChange={this.handleChange('neutDiagnosis')} />
+                                    <strong style={errorColor}>{this.state.required2error}</strong>
                                 </FormControl>
                                 <FormControl>
                                     <Select
@@ -1414,10 +1453,11 @@ class DialogueForm extends Component {
                                     />
                                 </div>
                                 <FormControl fullWidth={true}>
-                                    <InputLabel>Patient Response</InputLabel>
-                                    <Input id="negDiagnosis" className="required2"
+                                    <InputLabel>***Patient Response***</InputLabel>
+                                    <Input id="negDiagnosis"
                                            value={this.state.negDiagnosis}
                                            onChange={this.handleChange('negDiagnosis')} />
+                                    <strong style={errorColor}>{this.state.required2error}</strong>
                                 </FormControl>
                                 <FormControl>
                                     <Select
