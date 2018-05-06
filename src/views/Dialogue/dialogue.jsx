@@ -356,16 +356,6 @@ class DialogueForm extends Component {
             padding:'20px'
         };
 
-        const submitItem = {
-            width: 250,
-            height: 850,
-            alignItems: 'center',
-            justifyContent: 'center',
-            display: 'flex',
-            flexDirection: 'column',
-            padding:'20px'
-        };
-
         return (
             <div style={{overflowX: 'auto'}}>
                 <form onSubmit={this.handleSubmit}>
@@ -1892,12 +1882,6 @@ class DialogueForm extends Component {
                                         value="negDiagnosisOptional6"
                                     />
                                 </div>
-                            </Card>
-                        </ListItem>
-
-                        <ListItem>
-                            <Card style={submitItem}>
-                                <input type="submit" value="Submit" />
                             </Card>
                         </ListItem>
                     </List>
