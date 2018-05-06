@@ -37,7 +37,7 @@ class PatientChart extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
 }
 state = {
-  weight: Number,
+  weight: '',
   height: '',
   momhistory: '',
   dadhistory: '',
