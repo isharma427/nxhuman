@@ -89,7 +89,7 @@ handleSubmit2(event) {
           plainCard
           cardTitle="Review and Submit"
         
-          cardSubtitle= "Please click final save to ensure all data has been associated with your Case ID and saved to your email. Then click submit to email your information to nxHuman!"
+          cardSubtitle= "Please Click Final Save to Ensure All Data has been Associated with your Case ID and Saved to your Email. Then Click Submit to Email your Information to nxHuman!"
            
           
           content={
