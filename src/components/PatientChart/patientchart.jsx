@@ -33,11 +33,9 @@ class PatientChart extends React.Component{
   constructor(props) {
     super(props);
 
-<<<<<<< HEAD
    handleSubmit(event) {
     alert('Patient Chart Information Successfully Stored and Associated with Your Case ID! Remember to Click Next Step When You are Done');
     event.preventDefault();
-=======
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 }
@@ -98,7 +96,6 @@ state = {
   }).then(result => console.log('success: ', result))
       .catch(e => console.log('error: ', e));
 
->>>>>>> daab16a34721c5655f54a3e483d7efba563188e3
 }
 
 handleChange = name => event => {
