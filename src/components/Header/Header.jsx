@@ -16,6 +16,7 @@ import cx from "classnames";
 import headerStyle from "../../variables/styles/headerStyle.jsx";
 
 import HeaderLinks from "./HeaderLinks";
+import { Small } from "..";
 
 function Header({ ...props }) {
   function makeBrand() {
@@ -55,12 +56,17 @@ function Header({ ...props }) {
             onClick={props.handleDrawerToggle}
           >
             <Menu />
+
           </IconButton>
+
         </Hidden>
-        
+        <small>
+        Note: Please do not include real Patient Information on this application to comply with HIPAA Standards.
+       </small>
       </Toolbar>
     </AppBar>
   );
+  
 }
 
 Header.propTypes = {
