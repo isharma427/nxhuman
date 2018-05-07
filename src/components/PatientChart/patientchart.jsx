@@ -33,9 +33,6 @@ class PatientChart extends React.Component{
   constructor(props) {
     super(props);
 
-   handleSubmit(event) {
-    alert('Patient Chart Information Successfully Stored and Associated with Your Case ID! Remember to Click Next Step When You are Done');
-    event.preventDefault();
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 }
@@ -893,4 +890,3 @@ render() {
 }
 
 export default PatientChart;
-
