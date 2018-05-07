@@ -12,39 +12,41 @@ import {
 
 import avatar from "../../assets/img/faces/marc.jpg";
 
-
+const errorColor = {
+  Color: '#f44336'
+}
 class UserProfile extends React.Component{
+  constructor(props) {
+    super(props);
 
-
-  handleSubmit() {
-    alert('Information Stored and Associated With Case ID');
-    window.location = '/patientchart'
-     /* if (!this.isValidForm) {
-      alert('Please fill out all fields.')
-      
-  } else {
-    alert('Information Stored and Associated With Case ID');
-    window.location = '/patientchart'
-  }  */ 
-  }
-
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+}
   isValidForm = () => {
-    let valid1 = this.state.patientcondition && this.state.firstname && this.state.lastname && this.state.age;
-    let valid2 = this.state.location && this.state.description;
+    let valid1 = this.state.description!="";
+    alert(this.state.description)
+    
     if (!valid1) {
-      this.setState({required1error: 'Please fill in this field.'});
+      this.setState({required1error: 'Required Field'});
   }
   else {
       this.setState({required1error: ''});
   }
-  if (!valid2) {
-      this.setState({required2error: 'Please fill in this field.'});
+  return valid1 ;
   }
-  else {
-      this.setState({required2error: ''});
+
+  handleChange = name => event => {
+    this.setState({ [name]: event.target.value });
+};
+
+  handleSubmit(event) {
+    alert('Information Stored and Associated With Case ID');
+    window.location = '/patientchart'
+    
+    
   }
-  return valid1 && valid2;
-}
+
+ 
 
 state = {
 
@@ -53,10 +55,13 @@ state = {
   lastname: '',
   age: '',
   location: '',
-  description: ''
+  description: '',
+  required1error: ''
 
 
 }
+
+
   render() {
   return (
      
@@ -67,7 +72,7 @@ state = {
       
         />
       <Grid container>
-        <ItemGrid xs={12} sm={12} md={4}>
+        <ItemGrid xs={12} sm={12} md={5}>
           <RegularCard
             cardTitle="Overall Patient Information"
             cardSubtitle="Please Fill Out the Following Information and Click Next Step to Continue. ***All fields are mandatory!***"
@@ -85,7 +90,31 @@ state = {
                       inputProps={{
                         disabled: false
                       }}
+                      
                     />
+                    <strong>{this.state.required1error}</strong>
+
+                  </ItemGrid>
+                  
+                  
+                </Grid>
+
+                <Grid container>
+                  <ItemGrid xs={12} sm={12} md={6}>
+                    <CustomInput
+                      labelText="***First Name***"
+                      id="firstname"
+                      onChange = {this.state.firstname}
+                      formControlProps={{
+                        fullWidth: true
+                      }}
+                      inputProps={{
+                        disabled: false
+                      }}
+                      
+                    />
+                    <strong>{this.state.required1error}</strong>
+
                   </ItemGrid>
                   
                   
@@ -93,35 +122,44 @@ state = {
                 <Grid container>
                   <ItemGrid xs={12} sm={12} md={6}>
                     <CustomInput
-                      labelText="***First Name***"
-                      id="first-name"
-                      onChange = {this.state.firstname}
-
-                      formControlProps={{
-                        fullWidth: true
-                      }}
-                    />
-                    <CustomInput
                       labelText="***Last Name***"
                       id="last-name"
                       onChange = {this.state.lastname}
-
                       formControlProps={{
                         fullWidth: true
                       }}
+                      inputProps={{
+                        disabled: false
+                      }}
+                      
                     />
-                     <CustomInput
+                    <strong>{this.state.required1error}</strong>
+
+                  </ItemGrid>
+                  
+                  
+                </Grid>
+                <Grid container>
+                  <ItemGrid xs={12} sm={12} md={6}>
+                    <CustomInput
                       labelText="***Age***"
                       id="age"
                       onChange = {this.state.age}
-
                       formControlProps={{
                         fullWidth: true
                       }}
+                      inputProps={{
+                        disabled: false
+                      }}
+                      
                     />
+                    <strong>{this.state.required1error}</strong>
+
                   </ItemGrid>
-              
+                  
+                  
                 </Grid>
+                
                 <Grid container>
                   
                   <ItemGrid xs={12} sm={12} md={6}>
@@ -134,6 +172,8 @@ state = {
                         fullWidth: true
                       }}
                     />
+                   <strong>{this.state.required1error}</strong>
+
                   </ItemGrid>
                   <ItemGrid xs={12} sm={12} md={4}>
                     
@@ -157,6 +197,8 @@ state = {
                         rows: 5
                       }}
                     />
+                    <strong>{this.state.required1error}</strong>
+
                   </ItemGrid>
                 </Grid>
               </div>
@@ -169,12 +211,13 @@ state = {
             <a >
             </a>
             </Button>
-            
-            
             }
+            
+            
           />
            
         </ItemGrid>
+        
         <ItemGrid xs={12} sm={12} md={15}>
           
         </ItemGrid>
