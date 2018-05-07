@@ -117,15 +117,6 @@ body, h1, h2, h3, h4, h5, h6 {
     line-height: 1.5em;
 }
 
-a {
-    color: #9c27b0;
-    text-decoration: none;
-}
-
-a:hover, a:focus {
-    color: #89229b;
-    text-decoration: none;
-}
 
 legend {
     border-bottom: 0;
